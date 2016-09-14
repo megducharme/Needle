@@ -1,0 +1,17 @@
+<section class="auth-form">
+  <h2>Login or Register</h2>
+  <div>
+    Email: <input type="text" autofocus="true" ng-model="account.email" placeholder="user@gmail.com" style="font-size: 1em">
+  </div>
+
+  <p></p>
+  <div>
+  </div>
+    Password: <input type="password" ng-model="account.password" placeholder="iCantDecide" style="font-size: 1em">
+  <div>
+  <p></p>
+    <button class="btn btn-info" ng-click="register()">Register</button>
+    <button class="btn btn-info" ng-click="login()">Login</button>
+    <button class="btn btn-warning" ng-click="loginWithGoogle()">Login With Google</button>
+  </div>
+</section>
