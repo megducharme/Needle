@@ -20,12 +20,42 @@ let getEvents = () => {
   });
 };
 
-let userProfile = () => {
+let userProfile = (userProfileObject) => {
   return $q(function (resolve, reject) {
-    $http.post(`{FirebaseURL})users.json`
-  })
-}
+    $http.post(`{FirebaseURL})users.json`)
+    .success( (userProfile) => {
+      resolve(userProfile);
+    })
+    .error( (error) => {
+      reject(error);
+    });
+  });
+};
 
-  return{getEvents};
+let getPreferredEvents = (userId) => {
+  return $q(function (resolve, reject) {
+    $http.get(`{FirebaseURL}preferences.json?orderBy"uid"&equalTo${userId}`)
+    .success( (selectedEvents) => {
+      resolve(selectedEvents);
+    })
+    .error( (error) => {
+      reject(error);
+    });
+  });
+};
+
+let addPreferences = (checkboxValues) => {
+  return $q(function (resolve, reject) {
+    $http.put(`${FirebaseURL}preferences.json`)
+    .success( (largeObject) => {
+      resolve(largeObject);
+    })
+    .error( (error) => {
+      reject(error);
+    });
+  });
+};
+
+  return{getEvents, userProfile, addPreferences, getPreferredEvents};
 
 });

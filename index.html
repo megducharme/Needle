@@ -8,14 +8,11 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body class="wecomePage" ng-app="Needle">
-<div>
-  <div ng-include="'partials/navbar.html'">
+  <div ng-controller="TopCtrl">
+    <div ng-include="'partials/navbar.html'"></div>
+
+    <div ng-view></div>
   </div>
-</div>
-
-<div ng-view>
-
-</div>
 
 
 <!-- 3rd party libs -->
@@ -34,6 +31,7 @@
 <script type="text/javascript" src="app/controllers/UserPreferencesCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/TestCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/TopCtrl.js"></script>
 <!-- factories -->
 <script type="text/javascript" src="app/factories/EventFactory.js"></script>
 <script type="text/javascript" src="app/factories/AuthFactory.js"></script>

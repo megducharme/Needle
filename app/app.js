@@ -24,20 +24,15 @@ app.config(function($routeProvider){
             templateUrl:"partials/login.html",
             controller: "LoginCtrl"
         }).
-    when("/login", {
-            templateUrl:"partials/createProfile.html",
-            controller: "ProfileCtrl"
-        }).
-    when("/login", {
-            templateUrl:"partials/userProfile.html",
-            controller: "LoginCtrl"
+    when("/preferences", {
+            templateUrl:"partials/preferences.html",
+            controller: "UserPreferencesCtrl"
         }).
     when("/test", {
       templateUrl: "partials/test.html",
       controller: "TestCtrl"
     }).
     otherwise("/");
-
 });
 
 app.run( ($location, FBCreds) => {
