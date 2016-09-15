@@ -17,7 +17,7 @@ app.config(function($routeProvider){
    $routeProvider.
 
     when("/", {
-      templateUrl: "partials/login.html",
+      templateUrl: "partials/welcome.html",
       controller: "LoginCtrl"
     }).
     when("/login", {
