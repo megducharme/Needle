@@ -1,33 +1,33 @@
 <h1>Let's get to know each other!</h1>
-<h3>What would you like potentially included on your itinerary?</h3>
+<h3>What would you like potentially included on your itinerary?</h3><br>
 
 <form name="preferencesForm" class="preferencesForm">
   <label>Coffee
-    <input type="checkbox" ng-model="checkboxModel.coffee" ng-true-value="'true'" ng-false-value="'false'">
+    <input type="checkbox" ng-model="checkboxModel.coffee">
   </label><br/>
   <label>Waterfall Hike
-    <input type="checkbox" ng-model="checkboxModel.waterfallHike" ng-true-value="'waterfall hike'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.waterfallHike">
   </label><br/>
   <label>Breweries
-    <input type="checkbox" ng-model="checkboxModel.breweries" ng-true-value="'breweries'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.breweries">
   </label><br/>
   <label>Live Music
-    <input type="checkbox" ng-model="checkboxModel.liveMusic" ng-true-value="'live music'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.liveMusic" ng-true-value="'true'" ng-false-value="'false'">
   </label><br/>
   <label>Tours
-    <input type="checkbox" ng-model="checkboxModel.tours" ng-true-value="'tours'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.tours" ng-true-value="'true'" ng-false-value="'false'">
   </label><br/>
   <label>Places to Eat
-    <input type="checkbox" ng-model="checkboxModel.placesToEat" ng-true-value="'places to eat'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.placesToEat" ng-true-value="'true'" ng-false-value="'false'">
   </label><br/>
   <label>City Park
-    <input type="checkbox" ng-model="checkboxModel.cityPark" ng-true-value="'city park'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.cityPark" ng-true-value="'true'" ng-false-value="'false'">
   </label><br/>
   <label>Get Drinks
-    <input type="checkbox" ng-model="checkboxModel.getDrinks" ng-true-value="'get drinks'" ng-false-value="'not preferred'">
+    <input type="checkbox" ng-model="checkboxModel.getDrinks" ng-true-value="'true'" ng-false-value="'false'">
   </label><br/>
   <label>Shopping
-    <input type="checkbox" ng-model="checkboxModel.shopping" ng-true-value="'shopping'" ng-false-value="'not preferred'">
-  </label><br/>
+    <input type="checkbox" ng-model="checkboxModel.shopping" ng-true-value="'true'" ng-false-value="'false'">
+  </label><br/><br>
   <div class="preferencesBox"><input type="submit" value="Next" ng-click="showPreferredEvents()"></div>
  </form>

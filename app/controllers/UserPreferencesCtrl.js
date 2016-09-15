@@ -6,24 +6,24 @@ app.controller("UserPreferencesCtrl", function ($scope, EventFactory, $location)
 $scope.showPreferredEvents = () => {
 
   $scope.checkboxModel = {
-    coffee:false,
+    coffee:true,
     waterfallHike:false,
     breweries:false,
     liveMusic:false,
-    tours:false,
-    placesToEat:false,
+    tours:true,
+    placesToEat:true,
     cityParks:false,
     getDrinks:false,
     shopping:false,
   }
 
-  values = [];
+  let values = [];
   for(var value in $scope.checkboxModel) {
-    if (value) {
+    if ($scope.checkboxModel[value]) {
     values.push(value);
-    console.log(values);
     }
   }
+    console.log(values);
 
 };
 
