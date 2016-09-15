@@ -18,3 +18,18 @@
 h1, h3, .preferencesForm {
   text-align: center;
 }
+
+.selection-pic {
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 200px;
+    padding: auto;
+}
+
+.panel-boady {
+  margin-left: 20px;
+}
+
+.welcomePage {
+  display: block;
+}

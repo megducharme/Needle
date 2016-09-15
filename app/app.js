@@ -24,9 +24,17 @@ app.config(function($routeProvider){
             templateUrl:"partials/login.html",
             controller: "LoginCtrl"
         }).
+    when("/welcome", {
+            templateUrl:"partials/create-account.html",
+            controller: "UserAccountCtrl"
+        }).
     when("/preferences", {
             templateUrl:"partials/preferences.html",
             controller: "UserPreferencesCtrl"
+        }).
+    when("/selections", {
+            templateUrl:"partials/user-selections.html",
+            controller: "UserSelectionCtrl"
         }).
     when("/test", {
       templateUrl: "partials/test.html",

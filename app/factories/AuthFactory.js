@@ -2,6 +2,10 @@
 
 app.factory("AuthFactory", function () {
 
+  let getUser = function() {
+    return firebase.auth().currentUser.uid;
+  }
+
   let createUser = function(userObj) {
     return firebase.auth().
     createUserWithEmailAndPassword(userObj.email, userObj.password)
@@ -34,5 +38,5 @@ app.factory("AuthFactory", function () {
     return (firebase.auth().currentUser) ? true : false;
   };
 
-  return {createUser, loginUser, logoutUser, isAuthenticated, loginGoogle};
+  return {createUser, getUser, loginUser, logoutUser, isAuthenticated, loginGoogle};
 });
