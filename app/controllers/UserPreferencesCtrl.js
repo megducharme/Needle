@@ -24,7 +24,6 @@ $scope.showPreferredEvents = () => {
     }
   }
     console.log(values);
-
-};
+  };
 
 });
