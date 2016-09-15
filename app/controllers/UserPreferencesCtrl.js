@@ -27,22 +27,35 @@ $scope.$parent.getUser()
 $scope.showPreferredEvents = () => {
 
   let values = [];
+  let userObjectToEdit;
+  let fbUserId;
+
   for(var value in $scope.checkboxModel) {
     if ($scope.checkboxModel[value]) {
     values.push(value);
     }
   }
-    console.log(values);
+    console.log("values", values);
+
 
   EventFactory.getUserObject(userId)
     .then ( (response) => {
       console.log("response from get user object function", response);
-      let userObject = response;
-      userObject.prefereces = values;
-      console.log("userObject.preferenes", values);
+      for(var key in response){
+        fbUserId = key;
+        console.log("key in getuserobj", key);
+        userObjectToEdit = response[key];
+        console.log("response[key]",response[key]);
+        userObjectToEdit.preferences = values;
+        console.log("userObject.preferenes", values);
+        }
+  EventFactory.addPreferencesToUserObject(userObjectToEdit, fbUserId)
+  .then ( () => {
+    console.log("preferences added");
+  })
     });
 
-  EventFactory.addPreferencesToUserObject(values);
 
-  };
+}
+
 });

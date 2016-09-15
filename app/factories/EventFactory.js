@@ -32,24 +32,25 @@ let addUserProfile = (userProfileObject) => {
   });
 };
 
-let getPreferredEvents = (userId) => {
-  return $q(function (resolve, reject) {
-    $http.get(`{$FirebaseURL}preferences.json?orderBy"uid"&equalTo"${userId}"`)
-    .success( (selectedEvents) => {
-      resolve(selectedEvents);
-    })
-    .error( (error) => {
-      reject(error);
-    });
-  });
-};
+// let getPreferredEvents = (userId) => {
+//   return $q(function (resolve, reject) {
+//     $http.get(`{$FirebaseURL}preferences.json?orderBy"uid"&equalTo"${userId}"`)
+//     .success( (selectedEvents) => {
+//       resolve(selectedEvents);
+//     })
+//     .error( (error) => {
+//       reject(error);
+//     });
+//   });
+// };
 
 let getUserObject = (userId) => {
   console.log("are we getting an id?", userId);
   return $q (function (resolve, reject) {
-    $http.get(`${FirebaseURL}users.json?orderBy="uid"&equalTo="${userId}"`)
-    .success( (userObject) => {
-      resolve(userObject);
+    $http.get(`${FirebaseURL}users.json?orderBy="userId"&equalTo="${userId}"`)
+    .success( (userObj) => {
+      console.log("userObj from get user obj in event factory", userObj);
+      resolve(userObj);
     })
     .error( (error) => {
       reject(error);
@@ -57,11 +58,12 @@ let getUserObject = (userId) => {
   });
 };
 
-let addPreferencesToUserObject = (checkboxValues) => {
+let addPreferencesToUserObject = (userObjToEdit, key) => {
+  console.log("what is the key", key)
   return $q(function (resolve, reject) {
-    $http.put(`${FirebaseURL}preferences.json`, JSON.stringify(checkboxValues))
-    .success( (largeObject) => {
-      resolve(largeObject);
+    $http.patch(`${FirebaseURL}users/${key}.json`, JSON.stringify(userObjToEdit))
+    .success( (object) => {
+      resolve(object);
     })
     .error( (error) => {
       reject(error);
@@ -69,6 +71,6 @@ let addPreferencesToUserObject = (checkboxValues) => {
   });
 };
 
-  return{addUserProfile, getEvents, getUserObject, addPreferencesToUserObject, getPreferredEvents};
+  return{addUserProfile, getEvents, getUserObject, addPreferencesToUserObject};
 
 });

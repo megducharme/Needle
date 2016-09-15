@@ -14,7 +14,8 @@ $scope.$parent.getUser()
 
 $scope.userObject = {
   name:null,
-  currentLocation:null
+  currentLocation:null,
+  preferences:null
 };
 
 $scope.createUserProfile = () => {
