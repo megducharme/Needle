@@ -16,7 +16,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
       console.log("you're a new user", userData.uid );
       // $scope.login();
       if (userData) {
-        $window.location.href = "#/preferences";
+        $window.location.href = "#/welcome";
       } else {
         $window.location.href = "#/login";
       }

@@ -20,9 +20,9 @@ let getEvents = () => {
   });
 };
 
-let userProfile = (userProfileObject) => {
+let addUserProfile = (userProfileObject) => {
   return $q(function (resolve, reject) {
-    $http.post(`{FirebaseURL})users.json`)
+    $http.post(`${FirebaseURL}users.json`, JSON.stringify(userProfileObject))
     .success( (userProfile) => {
       resolve(userProfile);
     })
@@ -34,7 +34,7 @@ let userProfile = (userProfileObject) => {
 
 let getPreferredEvents = (userId) => {
   return $q(function (resolve, reject) {
-    $http.get(`{FirebaseURL}preferences.json?orderBy"uid"&equalTo${userId}`)
+    $http.get(`{$FirebaseURL}preferences.json?orderBy"uid"&equalTo"${userId}"`)
     .success( (selectedEvents) => {
       resolve(selectedEvents);
     })
@@ -44,9 +44,22 @@ let getPreferredEvents = (userId) => {
   });
 };
 
-let addPreferences = (checkboxValues) => {
+let getUserObject = (userId) => {
+  console.log("are we getting an id?", userId);
+  return $q (function (resolve, reject) {
+    $http.get(`${FirebaseURL}users.json?orderBy="uid"&equalTo="${userId}"`)
+    .success( (userObject) => {
+      resolve(userObject);
+    })
+    .error( (error) => {
+      reject(error);
+    });
+  });
+};
+
+let addPreferencesToUserObject = (checkboxValues) => {
   return $q(function (resolve, reject) {
-    $http.put(`${FirebaseURL}preferences.json`)
+    $http.put(`${FirebaseURL}preferences.json`, JSON.stringify(checkboxValues))
     .success( (largeObject) => {
       resolve(largeObject);
     })
@@ -56,6 +69,6 @@ let addPreferences = (checkboxValues) => {
   });
 };
 
-  return{getEvents, userProfile, addPreferences, getPreferredEvents};
+  return{addUserProfile, getEvents, getUserObject, addPreferencesToUserObject, getPreferredEvents};
 
 });

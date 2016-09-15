@@ -2,32 +2,47 @@
 
 app.controller("UserPreferencesCtrl", function ($scope, EventFactory, $location) {
 
+let userId;
 
-$scope.checkboxModel = {
-  coffee:false,
-  waterfallHike:false,
-  value3:false,
-  value4:false,
-  value5:false,
-  value6:true,
-  value7:false,
-  value8:true,
-  value9:false
-}
+$scope.$parent.getUser()
+  .then ( (user) => {
+    console.log("resolved")
+    userId = user;
+  console.log("need this userId", userId);
+  })
+  .catch(() => console.error);
 
+  $scope.checkboxModel = {
+    coffee:false,
+    waterfallHike:false,
+    breweries:false,
+    liveMusic:false,
+    tours:false,
+    placesToEat:false,
+    cityParks:false,
+    getDrinks:false,
+    shopping:false
+  };
 
-values = [];
+$scope.showPreferredEvents = () => {
 
-for(var value in $scope.checkboxModel) {
-  if (value) {
-  values.push(value);
-  console.log(values);
+  let values = [];
+  for(var value in $scope.checkboxModel) {
+    if ($scope.checkboxModel[value]) {
+    values.push(value);
+    }
   }
-}
+    console.log(values);
 
+  EventFactory.getUserObject(userId)
+    .then ( (response) => {
+      console.log("response from get user object function", response);
+      let userObject = response;
+      userObject.prefereces = values;
+      console.log("userObject.preferenes", values);
+    });
 
-$scope.addPreferencesToObject = () => {
-  EventFactory.addPreferences();
-}
+  EventFactory.addPreferencesToUserObject(values);
 
+  };
 });
