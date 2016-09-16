@@ -6,7 +6,7 @@ let userId;
 
 $scope.$parent.getUser()
   .then ( (user) => {
-    console.log("resolved")
+    // console.log("resolved");
     $scope.userObject.userId = user;
   })
   .catch(() => console.error);
@@ -20,7 +20,7 @@ $scope.userObject = {
 
 $scope.createUserProfile = () => {
   EventFactory.addUserProfile($scope.userObject);
-  console.log("this is from the create user", $scope.userObject);
+  // console.log("this is from the create user", $scope.userObject);
 };
 
 });
