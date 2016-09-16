@@ -5,6 +5,9 @@ app.controller("UserPreferencesCtrl", function ($scope, EventFactory, $location)
 console.log("UserPreferencesCtrl is working");
 
 let userId;
+let values = [];
+let userObjectToEdit;
+let fbUserId;
 
 $scope.$parent.getUser()
   .then ( (user) => {
@@ -27,35 +30,27 @@ $scope.$parent.getUser()
     shopping:false
   };
 
-  let values = [];
 $scope.showPreferredEvents = () => {
   for(var value in $scope.checkboxModel) {
     if ($scope.checkboxModel[value]) {
     values.push(value);
     }
   }
-  getUserObjFromFB();
-    console.log("values array", values);
-};
-
-function getUserObjFromFB() {
-  let userObjectToEdit;
-  let fbUserId;
   EventFactory.getUserObject(userId)
     .then ( (response) => {
       console.log("response", response);
+      // return $q()
       for(var key in response){
         fbUserId = key;
         userObjectToEdit = response[key];
         userObjectToEdit.preferences = values;
         }
-  EventFactory.addPreferencesToUserObject(userObjectToEdit, fbUserId);
-  });
-}
-
-$scope.goToSelections = function() {
+      EventFactory.addPreferencesToUserObject(userObjectToEdit, fbUserId)
+      .then(()=>{
         $location.path("/selections");
-    };
-
+      });
+  });
+    console.log("values array", values);
+};
 
 });
