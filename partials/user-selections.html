@@ -1,8 +1,9 @@
 <h1>Choose from our Nashville favorites, or add your own!</h1>
   <div class="row">
 
-  <h2>Coffee</h2>
-    <div class ="panel panel-success col-md-3 .containerfluid" ng-repeat="event in events" ng-if="event.type === 'coffee'">
+  <h2>{{event.type}}</h2>
+  <div ng-repeat="event in events">
+    <div class ="panel panel-success col-md-3 .containerfluid">
       <div class="row">
         <div class="panel-body">
           <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
@@ -10,35 +11,11 @@
           <div>{{event.address}}</div>
           <data class="col-md-1"></data>
           <div class="input-group-btn  board-list">
-            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px;">Add to profile</button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li class="board" ng-click="addBoardIdtoPin(pin, board.id, pin.id)"><a href="#">Comfort</a></li>
-                <li class="board" ng-click="addBoardIdtoPin(pin, board.id, pin.id)"><a href="#">Try Something New</a></li>
-              </ul>
+            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;">Love this place!</button><br>
+            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;">Never Been</button>
           </div>
         </div>
       </div>
     </div>
-
-    <h2>Places to Eat</h2>
-      <div class ="panel panel-success col-md-3 .containerfluid" ng-repeat="event in events" ng-if="event.type === 'restaurant'">
-      <div class="row">
-        <div class="panel-body">
-          <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
-          <div>{{event.name}}</div>
-          <div>{{event.address}}</div>
-          <data class="col-md-1"></data>
-          <div class="input-group-btn  board-list">
-            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px;">Add to profile</button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li class="board" ng-click="addBoardIdtoPin(pin, board.id, pin.id)"><a href="#">I love this place!</a></li>
-                <li class="board" ng-click="addBoardIdtoPin(pin, board.id, pin.id)"><a href="#">Try Something New</a></li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
+  </div>
   </div>

@@ -2,13 +2,16 @@
 
 app.controller("UserPreferencesCtrl", function ($scope, EventFactory, $location) {
 
+console.log("UserPreferencesCtrl is working");
+
 let userId;
 
 $scope.$parent.getUser()
   .then ( (user) => {
-    console.log("resolved")
+    console.log("resolved");
     userId = user;
-  console.log("need this userId", userId);
+    // $scope.showPreferredEvents();
+  // console.log("need this userId", userId);
   })
   .catch(() => console.error);
 
@@ -24,38 +27,35 @@ $scope.$parent.getUser()
     shopping:false
   };
 
-$scope.showPreferredEvents = () => {
-
   let values = [];
-  let userObjectToEdit;
-  let fbUserId;
-
+$scope.showPreferredEvents = () => {
   for(var value in $scope.checkboxModel) {
     if ($scope.checkboxModel[value]) {
     values.push(value);
     }
   }
-    console.log("values", values);
+  getUserObjFromFB();
+    console.log("values array", values);
+};
 
-
+function getUserObjFromFB() {
+  let userObjectToEdit;
+  let fbUserId;
   EventFactory.getUserObject(userId)
     .then ( (response) => {
-      console.log("response from get user object function", response);
+      console.log("response", response);
       for(var key in response){
         fbUserId = key;
-        console.log("key in getuserobj", key);
         userObjectToEdit = response[key];
-        console.log("response[key]",response[key]);
         userObjectToEdit.preferences = values;
-        console.log("userObject.preferenes", values);
         }
-  EventFactory.addPreferencesToUserObject(userObjectToEdit, fbUserId)
-  .then ( () => {
-    console.log("preferences added");
-  })
-    });
-
-
+  EventFactory.addPreferencesToUserObject(userObjectToEdit, fbUserId);
+  });
 }
+
+$scope.goToSelections = function() {
+        $location.path("/selections");
+    };
+
 
 });

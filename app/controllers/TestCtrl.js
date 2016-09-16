@@ -7,7 +7,7 @@ app.controller("TestCtrl", function($scope, EventFactory) {
   EventFactory.getEvents()
     .then((events) => {
       $scope.events = events;
-      console.log("these are the events", events);
+      // console.log("these are the events", events);
     });
 
 });

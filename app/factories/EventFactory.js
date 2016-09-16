@@ -20,6 +20,24 @@ let getEvents = () => {
   });
 };
 
+let getSingleEvent = (eventType) => {
+  let events = [];
+  return $q( (resolve, reject) => {
+    $http.get(`${FirebaseURL}events.json?orderBy="type"&equalTo="${eventType}"`)
+    .success((eventObject) => {
+      console.log(eventObject);
+      Object.keys(eventObject).forEach((key) =>{
+        eventObject[key].id = key;
+        events.push(eventObject[key]);
+      });
+      resolve(events);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
 let addUserProfile = (userProfileObject) => {
   return $q(function (resolve, reject) {
     $http.post(`${FirebaseURL}users.json`, JSON.stringify(userProfileObject))
@@ -45,11 +63,9 @@ let addUserProfile = (userProfileObject) => {
 // };
 
 let getUserObject = (userId) => {
-  console.log("are we getting an id?", userId);
   return $q (function (resolve, reject) {
     $http.get(`${FirebaseURL}users.json?orderBy="userId"&equalTo="${userId}"`)
     .success( (userObj) => {
-      console.log("userObj from get user obj in event factory", userObj);
       resolve(userObj);
     })
     .error( (error) => {
@@ -58,8 +74,20 @@ let getUserObject = (userId) => {
   });
 };
 
+let getAllUsersFromFB = () => {
+  return $q (function (resolve, reject) {
+    $http.get(`${FirebaseURL}users.json`)
+    .success( (userObjs) => {
+      resolve(userObjs);
+    })
+    .error( (error) => {
+      reject(error);
+    });
+  });
+};
+
 let addPreferencesToUserObject = (userObjToEdit, key) => {
-  console.log("what is the key", key)
+  console.log("what is the key", key);
   return $q(function (resolve, reject) {
     $http.patch(`${FirebaseURL}users/${key}.json`, JSON.stringify(userObjToEdit))
     .success( (object) => {
@@ -71,6 +99,6 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
   });
 };
 
-  return{addUserProfile, getEvents, getUserObject, addPreferencesToUserObject};
+  return{addUserProfile, getEvents, getUserObject, addPreferencesToUserObject, getSingleEvent};
 
 });
