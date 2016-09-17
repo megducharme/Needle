@@ -62,6 +62,7 @@ function flattenObjects(data) {
 $scope.saveEventToProfile = (event) => {
   console.log("saving an event to profile event", event);
   event.uid = userId;
+  console.log("event with uid, I hope", event);
   EventFactory.addEventToUserProfile(event)
     .then( () => {
 

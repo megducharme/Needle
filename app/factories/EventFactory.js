@@ -2,6 +2,7 @@
 
 app.factory("EventFactory", ($q, $http, FirebaseURL) => {
 
+
 let getEvents = () => {
   let events = [];
   return $q( (resolve, reject) => {
@@ -20,22 +21,11 @@ let getEvents = () => {
   });
 };
 
-let addNewEvents = (newEvent) => {
-  return $q( (resolve, reject) => {
-    $http.post(`${FirebaseURL}events.json`, JSON.stringify(newEvent))
-    .success((eventObject) => {
-      console.log(eventObject);
-      resolve(eventObject);
-    })
-    .error((error) => {
-      reject(error);
-    });
-  });
-};
 
-let addEventToUserProfile = (eventId, userId, eventToSave) => {
+let addEventToUserProfile = (event) => {
+  console.log("event in addEventToUserProfile", event);
   return $q( (resolve, reject) => {
-    $http.post(`${FirebaseURL}events.json`, JSON.stringify(eventToSave))
+    $http.post("https://needle-fadd7.firebaseio.com/events.json", JSON.stringify(event))
     .success((eventObject) => {
       console.log(eventObject);
       resolve(eventObject);
@@ -60,18 +50,6 @@ let getEventsByType = (eventType) => {
   });
 };
 
-// let getSingleEvent = (eventId) => {
-//   return $q( (resolve, reject) => {
-//     $http.get(`${FirebaseURL}events.json?orderBy="id"&equalTo="${eventId}"`)
-//     .success((eventObject) => {
-//       console.log(eventObject);
-//       resolve(events);
-//     })
-//     .error((error) => {
-//       reject(error);
-//     });
-//   });
-// };
 
 let addUserProfile = (userProfileObject) => {
   return $q(function (resolve, reject) {
@@ -85,17 +63,6 @@ let addUserProfile = (userProfileObject) => {
   });
 };
 
-// let getPreferredEvents = (userId) => {
-//   return $q(function (resolve, reject) {
-//     $http.get(`{$FirebaseURL}preferences.json?orderBy"uid"&equalTo"${userId}"`)
-//     .success( (selectedEvents) => {
-//       resolve(selectedEvents);
-//     })
-//     .error( (error) => {
-//       reject(error);
-//     });
-//   });
-// };
 
 let getUserObject = (userId) => {
   return $q (function (resolve, reject) {
@@ -109,6 +76,7 @@ let getUserObject = (userId) => {
   });
 };
 
+
 let getAllUsersFromFB = () => {
   return $q (function (resolve, reject) {
     $http.get(`${FirebaseURL}users.json`)
@@ -120,6 +88,7 @@ let getAllUsersFromFB = () => {
     });
   });
 };
+
 
 let addPreferencesToUserObject = (userObjToEdit, key) => {
   console.log("what is the key", key);
@@ -133,6 +102,47 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
     });
   });
 };
+
+
+// let addNewEvents = (newEvent) => {
+//   return $q( (resolve, reject) => {
+//     $http.post(`${FirebaseURL}events.json`, JSON.stringify(newEvent))
+//     .success((eventObject) => {
+//       console.log(eventObject);
+//       resolve(eventObject);
+//     })
+//     .error((error) => {
+//       reject(error);
+//     });
+//   });
+// };
+
+
+// let getPreferredEvents = (userId) => {
+//   return $q(function (resolve, reject) {
+//     $http.get(`{$FirebaseURL}preferences.json?orderBy"uid"&equalTo"${userId}"`)
+//     .success( (selectedEvents) => {
+//       resolve(selectedEvents);
+//     })
+//     .error( (error) => {
+//       reject(error);
+//     });
+//   });
+// };
+
+
+// let getSingleEvent = (eventId) => {
+//   return $q( (resolve, reject) => {
+//     $http.get(`${FirebaseURL}events.json?orderBy="id"&equalTo="${eventId}"`)
+//     .success((eventObject) => {
+//       console.log(eventObject);
+//       resolve(events);
+//     })
+//     .error((error) => {
+//       reject(error);
+//     });
+//   });
+// };
 
   return{addUserProfile, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
