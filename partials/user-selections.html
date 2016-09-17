@@ -1,21 +1,37 @@
 <h1>Choose from our Nashville favorites, or add your own!</h1>
   <div class="row">
 
-  <h2>{{event.type}}</h2>
-  <div ng-repeat="event in eventsToDom">
-    <div class ="panel panel-success col-md-3 .containerfluid">
-      <div class="row">
-        <div class="panel-body">
-          <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
-          <div>{{event.name}}</div>
-          <div>{{event.address}}</div>
-          <data class="col-md-1"></data>
-          <div class="input-group-btn  board-list">
-            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;">Love this place!</button><br>
-            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;">Never Been</button>
+    <!-- <div ng-repeat="preference in preferences">
+      <h1>{{preference}}</h1> -->
+      <div ng-repeat="event in eventsToDom">
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div>{{event.name}}</div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;" ng-click="saveEventToProfile(event)">Love this place!</button><br>
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;">Never Been</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        </div>
+        </div>
+        </div>
+
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "https://cdn.techinasia.com/wp-content/uploads/2013/05/feature1-680x377.png">
+              <h3>Add my own event<h3>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 5px;"><a href="#/addNewEvent">Add</a></button><br>
+              </div>
+        </div>
+
     </div>
-  </div>
   </div>
