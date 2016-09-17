@@ -20,23 +20,58 @@ let getEvents = () => {
   });
 };
 
-let getSingleEvent = (eventType) => {
-  let events = [];
+let addNewEvents = (newEvent) => {
   return $q( (resolve, reject) => {
-    $http.get(`${FirebaseURL}events.json?orderBy="type"&equalTo="${eventType}"`)
+    $http.post(`${FirebaseURL}events.json`, JSON.stringify(newEvent))
     .success((eventObject) => {
       console.log(eventObject);
-      Object.keys(eventObject).forEach((key) =>{
-        eventObject[key].id = key;
-        events.push(eventObject[key]);
-      });
-      resolve(events);
+      resolve(eventObject);
     })
     .error((error) => {
       reject(error);
     });
   });
 };
+
+let addEventToUserProfile = (eventId, userId, eventToSave) => {
+  return $q( (resolve, reject) => {
+    $http.post(`${FirebaseURL}events.json`, JSON.stringify(eventToSave))
+    .success((eventObject) => {
+      console.log(eventObject);
+      resolve(eventObject);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
+
+let getEventsByType = (eventType) => {
+  return $q( (resolve, reject) => {
+    $http.get(`${FirebaseURL}events.json?orderBy="type"&equalTo="${eventType}"`)
+    .success((eventObject) => {
+      console.log("event objects getting event by type", eventObject);
+      resolve(eventObject);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
+// let getSingleEvent = (eventId) => {
+//   return $q( (resolve, reject) => {
+//     $http.get(`${FirebaseURL}events.json?orderBy="id"&equalTo="${eventId}"`)
+//     .success((eventObject) => {
+//       console.log(eventObject);
+//       resolve(events);
+//     })
+//     .error((error) => {
+//       reject(error);
+//     });
+//   });
+// };
 
 let addUserProfile = (userProfileObject) => {
   return $q(function (resolve, reject) {
@@ -99,6 +134,6 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
   });
 };
 
-  return{addUserProfile, getEvents, getUserObject, addPreferencesToUserObject, getSingleEvent};
+  return{addUserProfile, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
 });
