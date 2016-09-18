@@ -47,8 +47,6 @@ function flattenObjects(data) {
   console.log("data to be flattened", data);
   data.forEach(function(object) {
     for (var singleObject in object){
-      console.log("singleObj in for in loop", singleObject);
-      console.log("data in for in loop", data);
       $scope.eventsToDom.push(object[singleObject]);
       console.log("object[singleObject]", object[singleObject]);
     }
@@ -59,13 +57,23 @@ function flattenObjects(data) {
   // });
 }
 
-$scope.saveEventToProfile = (event) => {
+$scope.saveEventToProfileVisited = (event) => {
   console.log("saving an event to profile event", event);
+  event.visited = true;
   event.uid = userId;
-  console.log("event with uid, I hope", event);
   EventFactory.addEventToUserProfile(event)
-    .then( () => {
+    .then( (response) => {
+      $scope.eventsVisited = response;
+    });
+};
 
+$scope.saveEventToProfileNotVisited = (event) => {
+  console.log("saving an event to profile event", event);
+  event.visited = false;
+  event.uid = userId;
+  EventFactory.addEventToUserProfile(event)
+    .then( (response) => {
+      $scope.eventsNotVisited = response;
     });
 };
 

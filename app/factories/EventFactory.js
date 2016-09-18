@@ -21,11 +21,29 @@ let getEvents = () => {
   });
 };
 
+let getUserEvents = (userId) => {
+  let userEvents = [];
+  return $q( (resolve, reject) => {
+    $http.get(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
+    .success((userEventObjects) => {
+      console.log(userEventObjects);
+      Object.keys(userEventObjects).forEach((key) =>{
+        userEventObjects[key].id = key;
+        userEvents.push(userEventObjects[key]);
+      });
+      resolve(userEvents);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
 
 let addEventToUserProfile = (event) => {
   console.log("event in addEventToUserProfile", event);
   return $q( (resolve, reject) => {
-    $http.post("https://needle-fadd7.firebaseio.com/events.json", JSON.stringify(event))
+    $http.post("https://needle-fadd7.firebaseio.com/events.json", angular.toJson(event))
     .success((eventObject) => {
       console.log(eventObject);
       resolve(eventObject);
@@ -103,6 +121,18 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
   });
 };
 
+// let deleteUserEvent = (eventAddress, userId) => {
+//   return $q (function (resolve, reject) {
+//     $http.delete(`${FirebaseURL}events.json`)
+//     .success( (userObjs) => {
+//       resolve(userObjs);
+//     })
+//     .error( (error) => {
+//       reject(error);
+//     });
+//   });
+// };
+
 
 // let addNewEvents = (newEvent) => {
 //   return $q( (resolve, reject) => {
@@ -144,6 +174,6 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
 //   });
 // };
 
-  return{addUserProfile, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
+  return{addUserProfile, deleteUserEvent, getUserEvents, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
 });

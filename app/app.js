@@ -40,6 +40,10 @@ app.config(function($routeProvider){
             templateUrl:"partials/new-event-form.html",
             controller: "AddNewEventCtrl"
         }).
+     when("/myEvents", {
+            templateUrl:"partials/user-events.html",
+            controller: "UserEventsCtrl"
+        }).
     when("/test", {
       templateUrl: "partials/test.html",
       controller: "TestCtrl"
