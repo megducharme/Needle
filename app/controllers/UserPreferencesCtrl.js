@@ -24,7 +24,7 @@ $scope.$parent.getUser()
     breweries:false,
     liveMusic:false,
     tours:false,
-    placesToEat:false,
+    restaurants:false,
     cityParks:false,
     getDrinks:false,
     shopping:false

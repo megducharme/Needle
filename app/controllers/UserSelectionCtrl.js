@@ -59,6 +59,7 @@ function flattenObjects(data) {
 
 $scope.saveEventToProfileVisited = (event) => {
   console.log("saving an event to profile event", event);
+  event.type = "saved";
   event.visited = true;
   event.uid = userId;
   EventFactory.addEventToUserProfile(event)
@@ -69,6 +70,7 @@ $scope.saveEventToProfileVisited = (event) => {
 
 $scope.saveEventToProfileNotVisited = (event) => {
   console.log("saving an event to profile event", event);
+  event.type = "saved";
   event.visited = false;
   event.uid = userId;
   EventFactory.addEventToUserProfile(event)

@@ -22,6 +22,7 @@ let getEvents = () => {
 };
 
 let getUserEvents = (userId) => {
+  console.log("userID to get user events from FB", userId);
   let userEvents = [];
   return $q( (resolve, reject) => {
     $http.get(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
@@ -37,6 +38,18 @@ let getUserEvents = (userId) => {
       reject(error);
     });
   });
+};
+
+let patchUserEventsWithFbId = (userId) => {
+  return $q( (resolve, reject) => {
+    $http.put(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
+    .success((userEventObjects) => {
+      });
+      resolve(userEvents);
+    })
+    .error((error) => {
+      reject(error);
+    });
 };
 
 
@@ -121,17 +134,17 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
   });
 };
 
-// let deleteUserEvent = (eventAddress, userId) => {
-//   return $q (function (resolve, reject) {
-//     $http.delete(`${FirebaseURL}events.json`)
-//     .success( (userObjs) => {
-//       resolve(userObjs);
-//     })
-//     .error( (error) => {
-//       reject(error);
-//     });
-//   });
-// };
+let deleteUserEvent = (eventId) => {
+  return $q (function (resolve, reject) {
+    $http.delete(`${FirebaseURL}events.json?orderBy="id"&equalTo="${eventId}"`)
+    .success( (userObjs) => {
+      resolve(userObjs);
+    })
+    .error( (error) => {
+      reject(error);
+    });
+  });
+};
 
 
 // let addNewEvents = (newEvent) => {
@@ -174,6 +187,6 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
 //   });
 // };
 
-  return{addUserProfile, deleteUserEvent, getUserEvents, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
+  return{addUserProfile, getUserEvents, deleteUserEvent, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
 });

@@ -22,8 +22,8 @@ h1, h3, .preferencesForm {
 .selection-pic {
     max-height: 150px;
     min-height: 150px;
-    max-width: 200px;
-    padding: auto;
+    max-width: 300px;
+    padding: 0;
 }
 
 .panel-boady {
@@ -31,5 +31,11 @@ h1, h3, .preferencesForm {
 }
 
 .welcomePage {
+  text-align: center;
+  margin-top: 50px;
+}
 
+.welcomeInput {
+  text-align: left;
+  margin-top: 10px;
 }

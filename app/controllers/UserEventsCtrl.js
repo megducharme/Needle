@@ -17,13 +17,14 @@ function showUserEvents (userId){
   console.log("userId in show user events", userId);
   EventFactory.getUserEvents(userId)
   .then ( (response) => {
-    console.log(response);
+    console.log("response", response);
     $scope.userEvents = response;
+    console.log("scope user events", $scope.userEvents);
   });
 }
 
-$scope.removeEvent = (userId, eventAddress) => {
-  EventFactory.deleteUserEvent(userId, eventAddress)
+$scope.removeEvent = (eventId) => {
+  EventFactory.deleteUserEvent(eventId);
 }
 
 });
