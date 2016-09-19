@@ -15,5 +15,11 @@
   <option value="getDrinks">Get Drinks</option>
   <option value="liveMusic">Live Music</option>
 </select>
-<button ng-click="saveEventToUserProfile()">Save</button>
+
+<label for="visited">Have you been here?</label>
+<select name="visited" ng-model="event.visited">
+  <option value="true">Yes, I have been here</option>
+  <option value="false">No, but I want to go!</option>
+</select>
+<button ng-click="saveEventToUserProfile(event)">Save</button>
 

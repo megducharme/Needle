@@ -15,9 +15,10 @@ $scope.$parent.getUser()
   .catch(() => console.error);
 
 
-$scope.saveEventToUserProfile = () => {
+$scope.saveEventToUserProfile = (event) => {
   $scope.event;
   $scope.event.uid = userId;
+  EventFactory.addEventToUserProfile(event);
   console.log("eventType", $scope.event);
 };
 
