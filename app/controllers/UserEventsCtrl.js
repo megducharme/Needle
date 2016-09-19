@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("UserEventsCtrl", function ($scope, EventFactory) {
+app.controller("UserEventsCtrl", function ($scope, EventFactory, $location) {
 
 let userId;
 
@@ -24,7 +24,14 @@ function showUserEvents (userId){
 }
 
 $scope.removeEvent = (eventId) => {
-  EventFactory.deleteUserEvent(eventId);
-}
+  console.log("event id from FB", eventId);
+  EventFactory.deleteUserEvent(eventId)
+  .then ( (response) => {
+    EventFactory.getUserEvents(userId)
+    .then ( (response) => {
+      $scope.userEvents = response;
+    });
+  });
+};
 
 });

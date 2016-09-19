@@ -136,7 +136,7 @@ let addPreferencesToUserObject = (userObjToEdit, key) => {
 
 let deleteUserEvent = (eventId) => {
   return $q (function (resolve, reject) {
-    $http.delete(`${FirebaseURL}events.json?orderBy="id"&equalTo="${eventId}"`)
+    $http.delete(`${FirebaseURL}events/${eventId}.json`)
     .success( (userObjs) => {
       resolve(userObjs);
     })

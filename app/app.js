@@ -36,7 +36,7 @@ app.config(function($routeProvider){
             templateUrl:"partials/user-selections.html",
             controller: "UserSelectionCtrl"
         }).
-     when("/addNewEvent", {
+     when("/createEvent", {
             templateUrl:"partials/new-event-form.html",
             controller: "AddNewEventCtrl"
         }).
