@@ -17,7 +17,7 @@ function showUserEvents (userId){
   console.log("userId in show user events", userId);
   EventFactory.getUserEvents(userId)
   .then ( (response) => {
-    console.log("response", response);
+    console.log("which events are coming back!?", response);
     $scope.userEvents = response;
     console.log("scope user events", $scope.userEvents);
   });

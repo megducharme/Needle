@@ -54,11 +54,11 @@ let patchUserEventsWithFbId = (userId) => {
 
 
 let addEventToUserProfile = (event) => {
-  console.log("event in addEventToUserProfile", event);
+  console.log("this one should be the new event the user wants to add", event);
   return $q( (resolve, reject) => {
     $http.post("https://needle-fadd7.firebaseio.com/events.json", angular.toJson(event))
     .success((eventObject) => {
-      console.log(eventObject);
+      console.log("event in addevent to user profile function in event factory", eventObject);
       resolve(eventObject);
     })
     .error((error) => {
