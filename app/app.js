@@ -44,6 +44,10 @@ app.config(function($routeProvider){
             templateUrl:"partials/user-events.html",
             controller: "UserEventsCtrl"
         }).
+     when("/generateItinerary", {
+            templateUrl:"partials/itinerary.html",
+            controller: "ItineraryGeneratorCtrl"
+        }).
     when("/test", {
       templateUrl: "partials/test.html",
       controller: "TestCtrl"
