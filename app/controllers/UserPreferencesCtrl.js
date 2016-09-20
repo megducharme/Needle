@@ -20,7 +20,7 @@ $scope.$parent.getUser()
 
   $scope.checkboxModel = {
     coffee:false,
-    waterfallHike:false,
+    waterfallHikes:false,
     breweries:false,
     liveMusic:false,
     tours:false,
