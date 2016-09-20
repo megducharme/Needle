@@ -22,6 +22,7 @@ $scope.saveEventToUserProfile = (event) => {
   $scope.event.uid = userId;
   $scope.event.type = "saved";
   $scope.event.photo = "http://www.aal-europe.eu/wp-content/uploads/2013/12/events_medium.jpg";
+  $scope.comments = "";
   if($scope.event.visited === "true"){
     $scope.event.visited = true;
   } else {

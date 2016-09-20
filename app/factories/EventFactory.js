@@ -99,7 +99,7 @@ let getTimeAllottedEvents = (time) => {
 
 let updateEvent = (eventId, editedEvent) => {
   return $q( (resolve, reject) => {
-    $http.patch(`${FirebaseURL}events/${eventId}.json`, JSON.stringify(editedEvent))
+    $http.put(`${FirebaseURL}events/${eventId}.json`, JSON.stringify(editedEvent))
     .success((eventObject) => {
       console.log("updated event", eventObject);
       resolve(eventObject);
