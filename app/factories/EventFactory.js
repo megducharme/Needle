@@ -85,9 +85,8 @@ let getSingleEventToEdit = (eventId) => {
 
 let getTimeAllottedEvents = (time) => {
   return $q( (resolve, reject) => {
-    $http.get(`${FirebaseURL}events/${time}.json`)
+    $http.get(`${FirebaseURL}events.json?orderBy="time"&equalTo="${time}"`)
     .success((events) => {
-      console.log("events to get by time", events);
       resolve(events);
     })
     .error((error) => {

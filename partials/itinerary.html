@@ -1,7 +1,7 @@
 <h1><u>Generate an Itinerary!</u></h1>
 
 <h2 class="itinerary">How much time do you have?</h2>
-  <select class="itinerary" name="time" ng-model="userTime">
+  <select class="itinerary" name="time" ng-change="getAllEvents()" ng-model="userTime">
     <option value="fewHours">Few Hours</option>
     <option value="halfDay">Half Day</option>
     <option value="fullDay">Full Day</option>
@@ -25,4 +25,4 @@
 <button>Try Something New</button>
 </div>
 
-<button class=itinerarybtn ng-click="getAllottedEvents()">Get Itinerary!</button>
+<button class=itinerarybtn ng-click="displayItinerary()">Get Itinerary!</button>
