@@ -40,18 +40,6 @@ let getUserEvents = (userId) => {
   });
 };
 
-let patchUserEventsWithFbId = (userId) => {
-  return $q( (resolve, reject) => {
-    $http.put(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
-    .success((userEventObjects) => {
-      });
-      resolve(userEvents);
-    })
-    .error((error) => {
-      reject(error);
-    });
-};
-
 
 let addEventToUserProfile = (event) => {
   console.log("this one should be the new event the user wants to add", event);
@@ -81,6 +69,46 @@ let getEventsByType = (eventType) => {
   });
 };
 
+let getSingleEventToEdit = (eventId) => {
+  return $q( (resolve, reject) => {
+    $http.get(`${FirebaseURL}events/${eventId}.json`)
+    .success((eventObject) => {
+      console.log("meg, this one", eventObject);
+      resolve(eventObject);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
+
+let getTimeAllottedEvents = (time) => {
+  return $q( (resolve, reject) => {
+    $http.get(`${FirebaseURL}events/${time}.json`)
+    .success((events) => {
+      console.log("events to get by time", events);
+      resolve(events);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
+
+let updateEvent = (eventId, editedEvent) => {
+  return $q( (resolve, reject) => {
+    $http.patch(`${FirebaseURL}events/${eventId}.json`, JSON.stringify(editedEvent))
+    .success((eventObject) => {
+      console.log("updated event", eventObject);
+      resolve(eventObject);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
 
 let addUserProfile = (userProfileObject) => {
   return $q(function (resolve, reject) {
@@ -160,6 +188,17 @@ let deleteUserEvent = (eventId) => {
 //   });
 // };
 
+// let patchUserEventsWithFbId = (userId) => {
+//   return $q( (resolve, reject) => {
+//     $http.put(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
+//     .success((userEventObjects) => {
+//       });
+//       resolve(userEventObjects);
+//     })
+//     .error((error) => {
+//       reject(error);
+//     });
+// };
 
 // let getPreferredEvents = (userId) => {
 //   return $q(function (resolve, reject) {
@@ -187,6 +226,6 @@ let deleteUserEvent = (eventId) => {
 //   });
 // };
 
-  return{addUserProfile, getUserEvents, deleteUserEvent, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
+  return{addUserProfile, getTimeAllottedEvents, updateEvent, getUserEvents, getSingleEventToEdit, deleteUserEvent, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
 });

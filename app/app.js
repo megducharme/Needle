@@ -22,36 +22,48 @@ app.config(function($routeProvider){
     }).
     when("/login", {
             templateUrl:"partials/login.html",
-            controller: "LoginCtrl"
+            controller: "LoginCtrl",
         }).
     when("/welcome", {
             templateUrl:"partials/create-account.html",
-            controller: "UserAccountCtrl"
+            controller: "UserAccountCtrl",
+            resolve: {isAuth}
         }).
     when("/preferences", {
             templateUrl:"partials/preferences.html",
-            controller: "UserPreferencesCtrl"
+            controller: "UserPreferencesCtrl",
+            resolve: {isAuth}
         }).
     when("/selections", {
             templateUrl:"partials/user-selections.html",
-            controller: "UserSelectionCtrl"
+            controller: "UserSelectionCtrl",
+            resolve: {isAuth}
         }).
      when("/createEvent", {
             templateUrl:"partials/new-event-form.html",
-            controller: "AddNewEventCtrl"
+            controller: "AddNewEventCtrl",
+            resolve: {isAuth}
         }).
      when("/myEvents", {
             templateUrl:"partials/user-events.html",
-            controller: "UserEventsCtrl"
+            controller: "UserEventsCtrl",
+            resolve: {isAuth}
         }).
      when("/generateItinerary", {
             templateUrl:"partials/itinerary.html",
-            controller: "ItineraryGeneratorCtrl"
+            controller: "ItineraryGeneratorCtrl",
+            resolve: {isAuth}
+        }).
+     when("/:eventId/edit", {
+            templateUrl:"partials/new-event-form.html",
+            controller: "EditEventCtrl",
+            resolve: {isAuth}
         }).
     when("/test", {
-      templateUrl: "partials/test.html",
-      controller: "TestCtrl"
-    }).
+            templateUrl: "partials/test.html",
+            controller: "TestCtrl",
+            resolve: {isAuth}
+        }).
     otherwise("/");
 });
 

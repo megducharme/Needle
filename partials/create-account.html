@@ -7,7 +7,8 @@
 <label class="welcomeInput">Name</label>
 <input class="welcomeInput" type="text" name="name" ng-model="userObject.name"><br>
 
-<label class="welcomeInput">Current Location</label>
+<label ng-model="address.currentAddress" class="welcomeInput">Current Location</label>
 <input class="welcomeInput" type="text" name="location" ng-model="userObject.currentLocation"><br>
-<button class="welcomeInput" ng-click="createUserProfile()"> <a ng-href="#/preferences"</a>Next</button><br>
+<button class="welcomeInput" ng-click="createUserProfile()"><a ng-href="#/preferences">Next</a></button><br>
+<!-- <button ng-click="initMap()">Show Current Location</button><br> -->
 </div>
