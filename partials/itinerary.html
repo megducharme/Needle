@@ -1,13 +1,17 @@
+<div class="showGenerateItinerary">
 <h1><u>Generate an Itinerary!</u></h1>
 
-<h2 class="itinerary">How much time do you have?</h2>
-  <select class="itinerary" name="time" ng-model="user.time">
+<h2 class="itinerarybtn">How much time do you have?</h2>
+  <select class="itinerarybtn" name="time" ng-model="userTime">
     <option value="fewHours">Few Hours</option>
     <option value="halfDay">Half Day</option>
     <option value="fullDay">Full Day</option>
   </select><br>
 
-<h3 class="itinerary">COMFORT</h3>
+<button ng-click="generateItinerary()">Submit</a></button>
+
+
+<!-- <h3 class="itinerary">COMFORT</h3>
 <h4 class="itinerary">This option will generate an itinerary <br> based on places you have been and know you will enjoy</h4>
 <div class=itinerarybtn>
 <button>Comfort</button>
@@ -23,6 +27,6 @@
 <h4 class="itinerary"> This will generate a day with both places you know mixed with places you have never been before. <br>You can <i>trust</i> that it will be a great day!</h4>
 <div class=itinerarybtn>
 <button>Try Something New</button>
-</div>
+</div> -->
 
-<button class=itinerarybtn ng-click="generateItinerary()">Get Itinerary!</button>
+</div>

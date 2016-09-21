@@ -22,6 +22,7 @@ EventFactory.getSingleEventToEdit($routeParams.eventId)
   });
 
 $scope.saveEventToUserProfile = (event) => {
+  event.comments = $scope.comments;
   EventFactory.updateEvent($routeParams.eventId, $scope.event)
     .then ( (response) => {
       $location.url("/myEvents");

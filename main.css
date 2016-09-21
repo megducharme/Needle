@@ -17,6 +17,7 @@
 
 h1, h3, .preferencesForm {
   text-align: center;
+  font-family: avenir;
 }
 
 .itinerary {
@@ -24,7 +25,7 @@ h1, h3, .preferencesForm {
 }
 
 .itinerarybtn {
-  text-align: center;
+  display: block;
 }
 
 .selection-pic {
@@ -48,3 +49,8 @@ h1, h3, .preferencesForm {
   margin-top: 10px;
 }
 
+.btn-info {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}

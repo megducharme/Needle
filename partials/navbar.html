@@ -13,10 +13,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-show="$parent.isLoggedIn"><button><a href="#/myEvents">My Events</a></button></li>
-          <li ng-show="$parent.isLoggedIn"><button><a href="#/createEvent">Create Event</a></button></li>
-          <li ng-show="$parent.isLoggedIn"><button><a href="#/generateItinerary">Generate Itinerary</a></button></li>
-          <li ng-show="$parent.isLoggedIn"><button ng-click="logout()">Logout</button></li>
+          <li ng-show="$parent.isLoggedIn"><a href="#/myEvents">My Events</a></li>
+
+          <li ng-show="$parent.isLoggedIn"><a href="#/createEvent">Create Event</a></li>
+
+          <li ng-show="$parent.isLoggedIn"><a href="#/generateItinerary">Generate Itinerary</a></li>
+
+          <li ng-show="$parent.isLoggedIn" ng-click="logout()"><a href = "#/welcome">Logout</a></li>
+
           <li ng-show="!$parent.isLoggedIn"><a ng-href="#/login">Login</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->

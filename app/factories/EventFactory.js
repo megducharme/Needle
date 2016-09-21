@@ -40,7 +40,6 @@ let getUserEvents = (userId) => {
   });
 };
 
-
 let addEventToUserProfile = (event) => {
   console.log("this one should be the new event the user wants to add", event);
   return $q( (resolve, reject) => {
@@ -85,9 +84,8 @@ let getSingleEventToEdit = (eventId) => {
 
 let getTimeAllottedEvents = (time) => {
   return $q( (resolve, reject) => {
-    $http.get(`${FirebaseURL}events/${time}.json`)
+    $http.get(`${FirebaseURL}events.json?orderBy="time"&equalTo="${time}"`)
     .success((events) => {
-      console.log("events to get by time", events);
       resolve(events);
     })
     .error((error) => {
@@ -99,7 +97,7 @@ let getTimeAllottedEvents = (time) => {
 
 let updateEvent = (eventId, editedEvent) => {
   return $q( (resolve, reject) => {
-    $http.patch(`${FirebaseURL}events/${eventId}.json`, JSON.stringify(editedEvent))
+    $http.put(`${FirebaseURL}events/${eventId}.json`, JSON.stringify(editedEvent))
     .success((eventObject) => {
       console.log("updated event", eventObject);
       resolve(eventObject);
