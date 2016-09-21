@@ -40,7 +40,6 @@ let getUserEvents = (userId) => {
   });
 };
 
-
 let addEventToUserProfile = (event) => {
   console.log("this one should be the new event the user wants to add", event);
   return $q( (resolve, reject) => {

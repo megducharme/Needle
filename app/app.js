@@ -61,7 +61,7 @@ app.config(function($routeProvider){
         }).
      when("/finalItinerary", {
             templateUrl:"partials/final-itinerary",
-            controller: "ItineraryGeneratorCtrl",
+            controller: "DisplayItineraryCtrl",
             resolve: {isAuth}
         }).
     when("/test", {
