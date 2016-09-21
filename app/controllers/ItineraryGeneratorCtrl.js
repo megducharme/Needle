@@ -31,14 +31,15 @@ function filterUserEvents (userId){
           fullDay.push(events[i]);
         }
       }
+      console.log("few hours events to check after promise", fewHours);
       console.log("half day events", halfDay);
-      console.log("few hours events", fewHours);
       console.log("full day events", fullDay);
     });
 }
 
 
 $scope.generateItinerary = () => {
+    console.log("few hours array to check inside generate itinerary", fewHours);
     console.log("few hours length after promise", fewHours.length);
 let userTime = $scope.userTime;
 let options;
@@ -50,54 +51,72 @@ console.log("user time", userTime);
     // console.log("inside switch statement");
     case "fewHours":
     console.log("few hours array", fewHours);
-      let num = getRandom(fewHours.length);
+      let num = getRandom(0, (fewHours.length-1));
     console.log("few hours length", fewHours.length);
     console.log("num from few hours", num);
       let fewHoursResult = fewHours[num];
-    console.log("few hours result, should be object", fewHoursResult);
       $scope.finalItinerary.push(fewHoursResult);
       break;
 
     case "halfDay":
-      options = getRandom(1);
-      console.log("option 1 was randomly generated");
+      options = getRandom(0, 1);
         if(options === 0) {
+          console.log("few hours array inside half day function", fewHours);
+      console.log("option 0 was randomly generated");
           for (var i = 1; i >= 0; i--) {
-            var fewHoursRandomHalfDay = getRandom(fewHours.length);
+            var fewHoursRandomHalfDay = getRandom(0, (fewHours.length-1));
+            console.log("few hours length", fewHours.length);
             fewHours.splice(fewHoursRandomHalfDay, 1);
             $scope.finalItinerary.push(fewHours[fewHoursRandomHalfDay]);
           }
+          console.log("freaking array after loops", fewHours);
         }else {
-          let num = getRandom(halfDay.length);
-          console.log("few hours length in half day", fewHours.length);
+          let num = getRandom(0, (halfDay.length-1));
+          console.log("few hours length in half day", (fewHours.length-1));
           let halfDayResults = halfDay[num];
           $scope.finalItinerary.push(halfDayResults);
           }
       break;
 
     case "fullDay":
-      options = getRandom(2);
-      // console.log("options in full day should be random", options);
+      options = getRandom(0, 2);
+      console.log("this should be random from 0-2!!");
+      console.log("options in full day should be random", options);
         if(options === 0) {
-          let num = getRandom(halfDay.length);
+          console.log("option 0 was randomly genereated, fullDay");
+          let num = getRandom(0, (halfDay.length-1));
           console.log("halfday length", halfDay.length);
           console.log("num", num);
           let halfDayResult = halfDay[num];
-          $scope.finalItinerary.push(halfDay[num]);
+          console.log("halfDayResult", halfDayResult);
+          $scope.finalItinerary.push(halfDayResult);
             for (var m = 1; m >= 0; m--) {
-              var fewHoursRandom = getRandom(fewHours.length);
-              fewHours.splice(fewHoursRandom, 1);
+              console.log("fewHours length in for loop ", fewHours.length);
+              var fewHoursRandom = getRandom(0, (fewHours.length-1));
+              console.log("few hours random", fewHoursRandom);
+              console.log("array before the splice", fewHours);
+              // fewHours.splice(fewHoursRandom, 1);
+              console.log("object to splice", fewHours[fewHoursRandom]);
+              console.log("array after the splice", fewHours);
               $scope.finalItinerary.push(fewHours[fewHoursRandom]);
             }
         }else if(options === 1) {
+              let halfDayToChooseFrom = halfDay;
           console.log("option 1 was randomly genereated");
             for (var j = 1; j >= 0; j--) {
-              var halfDayRandom = getRandom(halfDay.length);
-              halfDay.splice(halfDayRandom, 1);
+              console.log("halfDay array", halfDay);
+              console.log("this this running twice?");
+              var halfDayRandom = getRandom(0, (halfDay.length-1));
+              console.log("half day length", halfDay.length);
+              console.log("half day random number", halfDayRandom);
+              // halfDay.splice(halfDayRandom, 1);
               $scope.finalItinerary.push(halfDay[halfDayRandom]);
             }
         }else {
-          let num = getRandom(fullDay.length);
+          console.log("option 2 was randomly genereated");
+          let num = getRandom(0, (fullDay.length-1));
+          console.log("num in full day", num);
+          console.log("full day lenght", fullDay.length);
           let fullDayRandom = fullDay[num];
           $scope.finalItinerary.push(fullDay[num]);
         }
@@ -110,51 +129,9 @@ console.log("user time", userTime);
 };
 
 
-// function flattenItinerary (information) {
-//   console.log("information - should be itinerary", information)
-//   for (var i = information.length - 1; i >= 0; i--) {
-//       console.log("information[i]", information[i]);
-//       $scope.writeItineraryToDom.push(information[i])
-//   }
-//   console.log("events to write to dom", $scope.writeItineraryToDom);
-// }
-
-// $scope.getAllEvents = () => {
-//   Promise.all ([
-//     EventFactory.getTimeAllottedEvents("halfDay"),
-//     EventFactory.getTimeAllottedEvents("fewHours"),
-//     EventFactory.getTimeAllottedEvents("fullDay")
-//     ]).then(function(data) {
-//       console.log("data from promise all", data);
-//       extractDataFromPromiseAll(data);
-//     })
-// }
-
-// function extractDataFromPromiseAll(data) {
-//   let filteredHalfDay = [];
-
-//   Object.keys(data[0]).forEach((key) =>{
-//     data[0][key].id = key;
-//     halfDay.push(data[0][key])
-//   })
-//   console.log("full day array!?", fullDay);
-//   Object.keys(data[1]).forEach((key) =>{
-//     data[1][key].id = key;
-//     fewHours.push(data[1][key])
-//   })
-//   Object.keys(data[2]).forEach((key) =>{
-//     data[2][key].id = key;
-//     fullDay.push(data[2][key])
-//   console.log("halfday data - is it filled?", halfDay);
-//   })
-//   console.log("halfday length", halfDay.length);
-
-// generateItinerary();
-
-// }
-
-function getRandom(max) {
-  return Math.floor(Math.random() * (max + 1));
+function getRandom(min, max) {
+  console.log("min in random", min, "max in random", max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
