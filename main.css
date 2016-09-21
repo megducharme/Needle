@@ -54,3 +54,8 @@ h1, h3, .preferencesForm {
   color: white;
   text-decoration: none;
 }
+
+.nvabar-brand img {
+  height: 25px;
+  width: 8px;
+}
