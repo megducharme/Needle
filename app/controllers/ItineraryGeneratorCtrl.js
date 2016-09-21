@@ -49,8 +49,12 @@ console.log("user time", userTime);
   switch(userTime) {
     // console.log("inside switch statement");
     case "fewHours":
+    console.log("few hours array", fewHours);
       let num = getRandom(fewHours.length);
+    console.log("few hours length", fewHours.length);
+    console.log("num from few hours", num);
       let fewHoursResult = fewHours[num];
+    console.log("few hours result, should be object", fewHoursResult);
       $scope.finalItinerary.push(fewHoursResult);
       break;
 
@@ -76,6 +80,7 @@ console.log("user time", userTime);
       // console.log("options in full day should be random", options);
         if(options === 0) {
           let num = getRandom(halfDay.length);
+          console.log("halfday length", halfDay.length);
           console.log("num", num);
           let halfDayResult = halfDay[num];
           $scope.finalItinerary.push(halfDay[num]);
@@ -149,7 +154,7 @@ console.log("user time", userTime);
 // }
 
 function getRandom(max) {
-  return Math.floor(Math.random() * (max - 1));
+  return Math.floor(Math.random() * (max + 1));
 }
 
 
