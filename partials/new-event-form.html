@@ -22,6 +22,13 @@
   <option value=false>No, but I want to go!</option>
 </select><br>
 
+<label class="newEventInput" for="visited">How long does this activity take?</label><br>
+<select class="newEventInput" name="visited" ng-model="event.time">
+  <option value="fewHours">Few hours</option>
+  <option value="halfDay">Half Day</option>
+  <option value="fullDay">Full Day</option>
+</select><br>
+
 <label class="newEventInput">Comments</label><br>
 <textarea ng-model="comments" class="newEventInput" placeholder="Pregame - the drinks here are EXPENSIVE!"></textarea><br>
 

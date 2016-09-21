@@ -60,8 +60,7 @@ console.log("user time", userTime);
         if(options === 0) {
           for (var i = 1; i >= 0; i--) {
             var fewHoursRandomHalfDay = getRandom(fewHours.length);
-            console.log("few hours length in half day", fewHours.length);
-            fewHours.splice(fewHours[fewHoursRandomHalfDay], 1);
+            fewHours.splice(fewHoursRandomHalfDay, 1);
             $scope.finalItinerary.push(fewHours[fewHoursRandomHalfDay]);
           }
         }else {
@@ -76,29 +75,23 @@ console.log("user time", userTime);
       options = getRandom(2);
       // console.log("options in full day should be random", options);
         if(options === 0) {
-          console.log("option 0 was randomly genereated");
-          console.log("halfday length", halfDay.length);
           let num = getRandom(halfDay.length);
           console.log("num", num);
           let halfDayResult = halfDay[num];
-          console.log("halfday result for full day itinerary", halfDayResult);
           $scope.finalItinerary.push(halfDay[num]);
             for (var m = 1; m >= 0; m--) {
-              console.log("is this loop happening twice?");
               var fewHoursRandom = getRandom(fewHours.length);
-              fewHours.splice(fewHours[fewHoursRandom], 1);
-              console.log("few hours event to splice", fewHours[fewHoursRandom]);
+              fewHours.splice(fewHoursRandom, 1);
               $scope.finalItinerary.push(fewHours[fewHoursRandom]);
             }
         }else if(options === 1) {
           console.log("option 1 was randomly genereated");
             for (var j = 1; j >= 0; j--) {
               var halfDayRandom = getRandom(halfDay.length);
-              halfDay.splice(halfDay[halfDayRandom], 1);
+              halfDay.splice(halfDayRandom, 1);
               $scope.finalItinerary.push(halfDay[halfDayRandom]);
             }
         }else {
-          console.log("option 2 was randomly genereated");
           let num = getRandom(fullDay.length);
           let fullDayRandom = fullDay[num];
           $scope.finalItinerary.push(fullDay[num]);
@@ -156,7 +149,7 @@ console.log("user time", userTime);
 // }
 
 function getRandom(max) {
-  return Math.floor(Math.random() * (max + 1));
+  return Math.floor(Math.random() * (max - 1));
 }
 
 

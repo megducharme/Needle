@@ -25,7 +25,7 @@ h1, h3, .preferencesForm {
 }
 
 .itinerarybtn {
-  text-align: center;
+  display: block;
 }
 
 .selection-pic {
