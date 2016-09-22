@@ -64,11 +64,6 @@ app.config(function($routeProvider){
             controller: "DisplayItineraryCtrl",
             resolve: {isAuth}
         }).
-    when("/test", {
-            templateUrl: "partials/test.html",
-            controller: "TestCtrl",
-            resolve: {isAuth}
-        }).
     otherwise("/");
 });
 

@@ -45,7 +45,6 @@ let addEventToUserProfile = (event) => {
   return $q( (resolve, reject) => {
     $http.post("https://needle-fadd7.firebaseio.com/events.json", angular.toJson(event))
     .success((eventObject) => {
-      console.log("event in addevent to user profile function in event factory", eventObject);
       resolve(eventObject);
     })
     .error((error) => {
@@ -59,7 +58,6 @@ let getEventsByType = (eventType) => {
   return $q( (resolve, reject) => {
     $http.get(`${FirebaseURL}events.json?orderBy="type"&equalTo="${eventType}"`)
     .success((eventObject) => {
-      console.log("event objects getting event by type", eventObject);
       resolve(eventObject);
     })
     .error((error) => {
@@ -72,7 +70,6 @@ let getSingleEventToEdit = (eventId) => {
   return $q( (resolve, reject) => {
     $http.get(`${FirebaseURL}events/${eventId}.json`)
     .success((eventObject) => {
-      console.log("meg, this one", eventObject);
       resolve(eventObject);
     })
     .error((error) => {
@@ -99,7 +96,6 @@ let updateEvent = (eventId, editedEvent) => {
   return $q( (resolve, reject) => {
     $http.put(`${FirebaseURL}events/${eventId}.json`, JSON.stringify(editedEvent))
     .success((eventObject) => {
-      console.log("updated event", eventObject);
       resolve(eventObject);
     })
     .error((error) => {
@@ -171,58 +167,6 @@ let deleteUserEvent = (eventId) => {
     });
   });
 };
-
-
-// let addNewEvents = (newEvent) => {
-//   return $q( (resolve, reject) => {
-//     $http.post(`${FirebaseURL}events.json`, JSON.stringify(newEvent))
-//     .success((eventObject) => {
-//       console.log(eventObject);
-//       resolve(eventObject);
-//     })
-//     .error((error) => {
-//       reject(error);
-//     });
-//   });
-// };
-
-// let patchUserEventsWithFbId = (userId) => {
-//   return $q( (resolve, reject) => {
-//     $http.put(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
-//     .success((userEventObjects) => {
-//       });
-//       resolve(userEventObjects);
-//     })
-//     .error((error) => {
-//       reject(error);
-//     });
-// };
-
-// let getPreferredEvents = (userId) => {
-//   return $q(function (resolve, reject) {
-//     $http.get(`{$FirebaseURL}preferences.json?orderBy"uid"&equalTo"${userId}"`)
-//     .success( (selectedEvents) => {
-//       resolve(selectedEvents);
-//     })
-//     .error( (error) => {
-//       reject(error);
-//     });
-//   });
-// };
-
-
-// let getSingleEvent = (eventId) => {
-//   return $q( (resolve, reject) => {
-//     $http.get(`${FirebaseURL}events.json?orderBy="id"&equalTo="${eventId}"`)
-//     .success((eventObject) => {
-//       console.log(eventObject);
-//       resolve(events);
-//     })
-//     .error((error) => {
-//       reject(error);
-//     });
-//   });
-// };
 
   return{addUserProfile, getTimeAllottedEvents, updateEvent, getUserEvents, getSingleEventToEdit, deleteUserEvent, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
