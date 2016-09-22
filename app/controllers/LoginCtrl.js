@@ -32,7 +32,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
       .then( (data) => {
         console.log("a user has logged in ", data.uid);
         if (data) {
-          $window.location.href = "#/profile";
+          $window.location.href = "#/myEvents";
         } else {
           $window.location.href = "#/login";
         }
@@ -46,7 +46,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
         AuthFactory.loginGoogle($scope.account)
         .then((data)=> {
          if (data) {
-          $window.location.href = "#/profile";
+          $window.location.href = "#/welcome";
         } else {
           $window.location.href = "#/login";
         }

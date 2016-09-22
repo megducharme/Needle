@@ -10,11 +10,11 @@ $scope.$parent.getUser()
   })
   .catch(() => console.error);
 
+$scope.event = {};
 
 $scope.title = "Edit Your Event";
 $scope.btnText = "Update";
-$scope.event = {};
-$scope.comments = "";
+$scope.event.comments = "";
 
 EventFactory.getSingleEventToEdit($routeParams.eventId)
   .then ( (event) => {
@@ -22,7 +22,6 @@ EventFactory.getSingleEventToEdit($routeParams.eventId)
   });
 
 $scope.saveEventToUserProfile = (event) => {
-  event.comments = $scope.comments;
   EventFactory.updateEvent($routeParams.eventId, $scope.event)
     .then ( (response) => {
       $location.url("/myEvents");

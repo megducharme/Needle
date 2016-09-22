@@ -6,10 +6,10 @@
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
           <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
-            <div>{{event.name}}</div>
-            <div>{{event.address}}</div>
-            <div>{{event.comments}}</div>
+            <img class="selection-pic .img-responsive eventBlock" src= "{{event.photo}}">
+            <div class="eventBlock"><b>{{event.name}}</b></div>
+            <div class="eventBlock">{{event.address}}</div>
+            <div class="eventBlock">{{event.comments}}</div>
             <data class="col-md-1"></data>
             <div class="input-group-btn">
               <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
@@ -23,14 +23,14 @@
 
 <h1>Places You Want To Go</h1>
   <div class="row">
-    <div ng-repeat="event in userEvents" ng-if="event.visited == false" >
+    <div ng-repeat="event in userEvents" ng-if="event.visited == false">
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
           <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
-            <div>{{event.name}}</div>
-            <div>{{event.address}}</div>
-            <div>{{event.comments}}</div>
+            <img class="selection-pic .img-responsive" src= "{{event.photo}}">
+            <div class="eventBlock"><b>{{event.name}}</b></div>
+            <div class="eventBlock">{{event.address}}</div>
+            <div class="eventBlock">{{event.comments}}</div>
             <data class="col-md-1"></data>
             <div class="input-group-btn">
               <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)">Remove</button>
@@ -41,3 +41,21 @@
       </div>
     </div>
   </div>
+
+
+<!-- <div ng-repeat="event in userEvents" ng-if="event.visited == false">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail" style="display:inline-block;">
+        <img src="{{event.photo}}">
+        <div class="caption">
+          <h3>{{event.name}}</h3>
+          <h4>{{event.address}}</h4>
+          <p>{{event.caption}}</p>
+          <p><a href="#" class="btn btn-primary" role="button">Remove</a> <a href="#" class="btn btn-default" role="button">Edit</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->

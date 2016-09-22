@@ -1,13 +1,14 @@
-<h1>Meet Needle</h1>
-<h3><i>needle help planning?</i></h3>
+<div class="welcome-img">
+  <img src="../app/photos/login.png">
+</div>
 
 <div class="welcomePage">
-<h4>Create a Profile</h4>
+<h3><u>Create a Profile</u></h3>
 
-<label class="welcomeInput">Name</label>
+<label class="welcomeInput">Name</label><br>
 <input class="welcomeInput" type="text" name="name" ng-model="userObject.name"><br>
 
-<label ng-model="address.currentAddress" class="welcomeInput">Current Location</label>
+<label ng-model="address.currentAddress" class="welcomeInput">Current Location</label><br>
 <input class="welcomeInput" type="text" name="location" ng-model="userObject.currentLocation"><br>
 <button class="welcomeInput" ng-click="createUserProfile()"><a ng-href="#/preferences">Next</a></button><br>
 <!-- <button ng-click="initMap()">Show Current Location</button><br> -->

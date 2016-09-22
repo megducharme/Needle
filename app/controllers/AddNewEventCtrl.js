@@ -4,6 +4,7 @@ app.controller("AddNewEventCtrl", function ($scope, EventFactory, $location) {
 
 let userId;
 $scope.preferences = null;
+$scope.comments = null;
 
 
 $scope.$parent.getUser()
@@ -22,7 +23,7 @@ $scope.saveEventToUserProfile = (event) => {
   $scope.event.uid = userId;
   $scope.event.type = "saved";
   $scope.event.photo = "http://www.aal-europe.eu/wp-content/uploads/2013/12/events_medium.jpg";
-  $scope.comments = "";
+  event.comments = $scope.event.comments;
   if($scope.event.visited === "true"){
     $scope.event.visited = true;
   } else {

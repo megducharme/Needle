@@ -8,6 +8,7 @@
   height: 90px;
 }*/
 
+
 .eventDiv{
   display: block;
   height: 100px;
@@ -32,7 +33,6 @@ h1, h3, .preferencesForm {
     max-height: 150px;
     min-height: 150px;
     max-width: 300px;
-    padding: 0;
 }
 
 .panel-boady {
@@ -58,4 +58,53 @@ h1, h3, .preferencesForm {
 .nvabar-brand img {
   height: 25px;
   width: 8px;
+}
+
+.newEventForm {
+  text-align: center;
+  display: block;
+}
+
+.newEventInput {
+  text-align: center;
+  display: inline-block;
+}
+
+
+.preferencesForm {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.preferencesInput {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+.welcome-img {
+  margin-left: 290px;
+}
+
+.eventBlock {
+  text-align: center;
+}
+
+.eventBlock img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+.navbar {
+  background-color: #0095E3;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav li a {
+    color: #fff;
 }

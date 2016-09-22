@@ -1,15 +1,20 @@
 <div class="showGenerateItinerary">
 <h1><u>Generate an Itinerary!</u></h1>
 
-<h2 class="itinerarybtn">How much time do you have?</h2>
-  <select class="itinerarybtn" name="time" ng-model="userTime">
+<div class="preferencesInput">
+  <h2>How much time do you have?</h2>
+  <select name="time" ng-model="userTime">
     <option value="fewHours">Few Hours</option>
     <option value="halfDay">Half Day</option>
     <option value="fullDay">Full Day</option>
-  </select><br>
+  </select>
+</div>
 
+<div class="preferencesInput">
 <button ng-click="generateItinerary()">Submit</a></button>
+</div>
 
+</div>
 
 <!-- <h3 class="itinerary">COMFORT</h3>
 <h4 class="itinerary">This option will generate an itinerary <br> based on places you have been and know you will enjoy</h4>
@@ -28,5 +33,3 @@
 <div class=itinerarybtn>
 <button>Try Something New</button>
 </div> -->
-
-</div>
