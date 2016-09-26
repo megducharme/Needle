@@ -3,6 +3,7 @@
 app.controller("UserAccountCtrl", function ($scope, EventFactory, $location) {
 
 let userId;
+$scope.output;
 
 $scope.$parent.getUser()
   .then ( (user) => {
@@ -25,8 +26,13 @@ $scope.createUserProfile = () => {
 
 });
 
+
+
+
 //GET GEO LOCATION ----------------------------
 //GET GEO LOCATION ----------------------------
+// $scope.getLocation = () => {
+
 // $scope.map = { center: { latitude: 11.8251, longitude: 42.5903 }, zoom: 8};
 
 //   $scope.options = {scrollwheel: false};
@@ -99,6 +105,7 @@ $scope.createUserProfile = () => {
 //       });
 //     }
 //   };
+// };
 // });
 //GET GEO LOCATION ----------------------------
 //GET GEO LOCATION ----------------------------
