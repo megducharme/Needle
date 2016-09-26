@@ -5,9 +5,15 @@ app.controller("ItineraryGeneratorCtrl", function ($scope, EventFactory, $locati
 $scope.userTime = null;
 $scope.finalItinerary = null;
 let userId;
+let fewHours = [];
 let halfDay = [];
 let fullDay = [];
-let fewHours = [];
+let visitedhalfDay = [];
+let visitedfullDay = [];
+let visitedfewHours = [];
+let notVisitedhalfDay = [];
+let notVisitedfullDay = [];
+let notVisitedfewHours = [];
 
 
 $scope.$parent.getUser()
@@ -31,7 +37,33 @@ function filterUserEvents (userId){
           fullDay.push(events[i]);
         }
       }
+      console.log("few hours in promise, where to call filter function", fewHours);
+      filterUserEventsVisited(fewHours, halfDay, fullDay);
     });
+}
+
+function filterUserEventsVisited (fewHours, halfDay, fullDay){
+      for (var i = fewHours.length - 1; i >= 0; i--) {
+        if(fewHours[i].visited === true){
+          visitedfewHours.push(fewHours[i]);
+        }else{
+          notVisitedfewHours.push(fewHours[i]);
+      }
+      for (var m = halfDay.length - 1; m >= 0; i--) {
+        if(halfDay[m].visited === true){
+          visitedhalfDay.push(halfDay[m]);
+        }else{
+          notVisitedhalfDay.push(halfDay[i]);
+      }
+      for (var j = fullDay.length - 1; j >= 0; i--) {
+        if(fullDay[j].visited === true){
+          visitedfewHours.push(fullDay[j]);
+        }else{
+          notVisitedfullDay.push(fullDay[j]);
+      }
+      }
+      }
+      }
 }
 
 $scope.generateItinerary = () => {

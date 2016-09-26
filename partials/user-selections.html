@@ -1,8 +1,8 @@
 <h1>Choose from our Nashville favorites, or add your own!</h1>
   <div class="row">
 
-    <!-- <div ng-repeat="preference in preferences">
-      <h1>{{preference}}</h1> -->
+<!--      <div ng-if="event.type === 'coffee'">
+      <h2>{{event.type}}</h2>
       <div ng-repeat="event in eventsToDom">
         <div class ="panel panel-success col-md-3 .containerfluid">
           <div class="row">
@@ -19,5 +19,217 @@
           </div>
         </div>
       </div>
+      </div> -->
+
+
+<!-- THIS ONE WORKS -->
+<!-- THIS ONE WORKS -->
+<!-- THIS ONE WORKS -->
+
+    <div ng-repeat="event in eventsToDom">
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+<!-- THIS ONE WORKS -->
+<!-- THIS ONE WORKS -->
+<!-- THIS ONE WORKS -->
+
+
+     <!--  <div ng-if="event.type === 'coffee'">
+      <h2>Coffee</h2>
+      <div ng-repeat="event in eventsToDom">
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'waterfallHike'">
+      <h2>Water Fall Hikes</h2>
+      <div ng-repeat="event in eventsToDom">
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'breweries'">
+      <h2>Breweries</h2>
+      <div ng-repeat="event in eventsToDom">
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'liveMusic'">
+      <h2>Live Music</h2>
+      <div ng-repeat="event in eventsToDom" >
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'tours'">
+      <h2>Tours</h2>
+      <div ng-repeat="event in eventsToDom">
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'restaurants'">
+      <h2>Restaurants</h2>
+      <div ng-repeat="event in eventsToDom" >
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'cityPark'">
+      <div ng-repeat="event in eventsToDom">
+      <h2>City Parks</h2>
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <div ng-if="event.type === 'getDrinks'">
+      <div ng-repeat="event in eventsToDom" >
+      <h2>Get Drinks</h2>
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="event.type === 'shopping'">
+      <div ng-repeat="event in eventsToDom">
+      <h2>Shopping</h2>
+        <div class ="panel panel-success col-md-3 .containerfluid">
+          <div class="row">
+            <div class="panel-body">
+              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+              <div><b>{{event.name}}</b></div>
+              <div>{{event.address}}</div>
+              <data class="col-md-1"></data>
+              <div class="input-group-btn  board-list">
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+ -->
+
   </div>

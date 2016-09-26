@@ -1,5 +1,9 @@
 <h1>Woohoo You Have Things To Do!</h1>
 <div class="row">
+
+<!-- FOR EVENTS THAT THE USER HAS AND HASNT BEEN TO (TRUST) -->
+<!-- FOR EVENTS THAT THE USER HAS AND HASNT BEEN TO (TRUST) -->
+
     <div ng-repeat="object in finalItinerary">
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
@@ -15,4 +19,47 @@
        </div>
      </div>
     </div>
+
+    <!-- FOR AN EVENT THAT THE USER HAS BEEN TO -->
+    <!-- FOR AN EVENT THAT THE USER HAS BEEN TO -->
+
+<!--    <div ng-repeat="object in finalItinerary" ng-if="event.visited ===false">
+      <div class ="panel panel-success col-md-3 .containerfluid">
+        <div class="row">
+          <div class="panel-body">
+            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
+            <div>{{object.name}}</div>
+            <div>{{object.address}}</div>
+            <div>{{object.comments}}</div>
+            <data class="col-md-1"></data>
+            <div class="input-group-btn">
+          </div>
+         </div>
+       </div>
+     </div>
+    </div> -->
+
+
+    <!-- FOR AN EVENT THAT THE USER HAS NOT BEEN TO -->
+    <!-- FOR AN EVENT THAT THE USER HAS NOT BEEN TO -->
+
+    <!--  <div ng-repeat="object in finalItinerary" ng-if="event.visited ===true">
+      <div class ="panel panel-success col-md-3 .containerfluid">
+        <div class="row">
+          <div class="panel-body">
+            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
+            <div>{{object.name}}</div>
+            <div>{{object.address}}</div>
+            <div>{{object.comments}}</div>
+            <data class="col-md-1"></data>
+            <div class="input-group-btn">
+          </div>
+         </div>
+       </div>
+     </div>
+    </div> -->
+
+
+
+
   </div>
