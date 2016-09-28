@@ -15,7 +15,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
       console.log("you're a new user", userData.uid );
       // $scope.login();
       if (userData) {
-        $window.location.href = "#/welcome";
+        $window.location.href = "#/createAccount";
       } else {
         $window.location.href = "#/login";
       }
@@ -44,7 +44,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
         AuthFactory.loginGoogle($scope.account)
         .then((data)=> {
          if (data) {
-          $window.location.href = "#/welcome";
+          $window.location.href = "#/createAccount";
         } else {
           $window.location.href = "#/login";
         }

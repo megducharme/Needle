@@ -24,7 +24,7 @@ app.config(function($routeProvider){
             templateUrl:"partials/login.html",
             controller: "LoginCtrl",
         }).
-    when("/welcome", {
+    when("/createAccount", {
             templateUrl:"partials/create-account.html",
             controller: "UserAccountCtrl",
             resolve: {isAuth}

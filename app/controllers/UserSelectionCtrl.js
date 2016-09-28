@@ -48,7 +48,7 @@ function flattenObjects(data) {
   data.forEach(function(object) {
     for (var singleObject in object){
       $scope.eventsToDom.push(object[singleObject]);
-      console.log("object[singleObject]", object[singleObject]);
+      // console.log("object[singleObject]", object[singleObject]);
     }
   });
   console.log("array of objects to write to DOM", $scope.eventsToDom);
