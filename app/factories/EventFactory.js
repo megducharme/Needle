@@ -1,6 +1,8 @@
 "use strict";
 
-app.factory("EventFactory", ($q, $http, FirebaseURL) => {
+app.factory("EventFactory", ($q, $http, FirebaseURL, FBCreds) => {
+
+  console.log("fbreds", FBCreds.weatherUndergroundKey);
 
 
 let getEvents = () => {
@@ -33,6 +35,18 @@ let getUserEvents = (userId) => {
         userEvents.push(userEventObjects[key]);
       });
       resolve(userEvents);
+    })
+    .error((error) => {
+      reject(error);
+    });
+  });
+};
+
+let getNashWeather = () => {
+  return $q( (resolve, reject) => {
+    $http.get(`http://api.wunderground.com/api/${FBCreds.weatherUndergroundKey}/conditions/q/TN/Nashville.json`)
+    .success((nashWeather) => {
+      resolve(nashWeather);
     })
     .error((error) => {
       reject(error);
@@ -168,6 +182,6 @@ let deleteUserEvent = (eventId) => {
   });
 };
 
-  return{addUserProfile, getTimeAllottedEvents, updateEvent, getUserEvents, getSingleEventToEdit, deleteUserEvent, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
+  return{addUserProfile, getNashWeather, getTimeAllottedEvents, updateEvent, getUserEvents, getSingleEventToEdit, deleteUserEvent, getEvents, addEventToUserProfile, getUserObject, addPreferencesToUserObject, getEventsByType};
 
 });

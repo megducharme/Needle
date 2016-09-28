@@ -5,7 +5,7 @@
         <div class="row">
           <div class="panel-body">
             <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
-            <div>{{object.name}}</div>
+            <div><b>{{object.name}}</b></div>
             <div>{{object.address}}</div>
             <div>{{object.comments}}</div>
             <data class="col-md-1"></data>
@@ -15,4 +15,14 @@
        </div>
      </div>
     </div>
+
+  <div>
+    <div class="weatherBlock">
+      <h2>Today's Weather in Nashville, TN</h2>
+      <h4>{{$scope.weatherIcon}}</h4>
+      <h4>{{$scope.feelsLike}}</h4>
+      <h4>{{$scope.precipitation}}</h4>
+    </div>
+  </div>
+
   </div>

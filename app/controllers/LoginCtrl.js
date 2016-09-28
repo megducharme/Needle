@@ -7,7 +7,6 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
   };
 
   $scope.register = () => {
-    // console.log("you want to register?");
     AuthFactory.createUser({
       email: $scope.account.email,
       password: $scope.account.password
@@ -27,7 +26,6 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
 };
 
   $scope.login = () => {
-    // console.log("you clicked login");
     AuthFactory.loginUser($scope.account)
       .then( (data) => {
         console.log("a user has logged in ", data.uid);

@@ -4,6 +4,7 @@ app.controller("ItineraryGeneratorCtrl", function ($scope, EventFactory, $locati
 
 $scope.userTime = null;
 $scope.finalItinerary = null;
+$scope.nashvilleWeather = null;
 let userId;
 let halfDay = [];
 let fullDay = [];
@@ -94,6 +95,19 @@ console.log("user time", userTime);
       // flattenItinerary(finalItinerary);
 };
 
+
+$scope.getWeather = () => {
+  EventFactory.getNashWeather()
+  .then ( (nashWeather) => {
+    console.log("nashville weather", nashWeather);
+    $scope.weatherIcon = nashWeather.current_observation.icon_url;
+    console.log("weather icon", $scope.weatherIcon);
+    $scope.feelsLike = nashWeather.current_observation.feelslike_string;
+    console.log("weather feelslike", $scope.feelsLike);
+    $scope.precipitation = nashWeather.current_observation.precip_today_string;
+    console.log("weather precip", $scope.precipitation);
+  })
+}
 
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

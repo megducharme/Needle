@@ -66,7 +66,7 @@ app.config(function($routeProvider){
         }).
      when("/nssTab", {
             templateUrl:"partials/nss-tab",
-            controller: "NSSTabCtrl",
+            controller: "NSSCtrl",
             resolve: {isAuth}
         }).
     otherwise("/");
