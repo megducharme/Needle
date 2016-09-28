@@ -64,6 +64,11 @@ app.config(function($routeProvider){
             controller: "DisplayItineraryCtrl",
             resolve: {isAuth}
         }).
+     when("/nssTab", {
+            templateUrl:"partials/nss-tab",
+            controller: "NSSTabCtrl",
+            resolve: {isAuth}
+        }).
     otherwise("/");
 });
 

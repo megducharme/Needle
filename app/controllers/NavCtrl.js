@@ -8,6 +8,7 @@ app.controller("NavCtrl", function($scope, $location, EventFactory) {
             {url: '#/myEvents', name: "My Events", showState: "$parent.isLoggedIn"},
             {url: '#/createEvent', name: "Create Event", showState: "$parent.isLoggedIn"},
             {url: '#/generateItinerary', name: "Generate Itinerary", showState: "$parent.isLoggedIn"},
+            {url: '#/nssTab', name: "NSS", showState: "$parent.isLoggedIn"},
             // {url: '#/allboards', name: "All Boards", showState: "$parent.isLoggedIn"},
             // {url: '#/newboard', name: "New Board", showState: "$parent.isLoggedIn"},
             // {url: '#/newpin', name: "New Pin", showState: "$parent.isLoggedIn"}

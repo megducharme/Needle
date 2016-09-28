@@ -19,8 +19,11 @@ $scope.userObject = {
 };
 
 $scope.createUserProfile = () => {
-  EventFactory.addUserProfile($scope.userObject);
+  EventFactory.addUserProfile($scope.userObject)
+  .then(()=>{
+        $location.path("/selections");
   // console.log("this is from the create user", $scope.userObject);
+});
 };
 
 });
