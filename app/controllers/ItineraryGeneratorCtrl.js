@@ -80,7 +80,7 @@ console.log("user time", userTime);
               let halfDayToChooseFrom = halfDay;
             for (var j = 1; j >= 0; j--) {
               var halfDayRandom = getRandom(0, (halfDay.length-1));
-              // halfDay.splice(halfDayRandom, 1);
+              halfDay.splice(halfDayRandom, 1);
               $scope.finalItinerary.push(halfDay[halfDayRandom]);
             }
         }else {

@@ -21,7 +21,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
       }
       console.log("data from login - register", userData);
     }, (error) => {
-      console.log("there's an error creating the user");
+      console.log("there's an error creating the user", error);
   });
 };
 

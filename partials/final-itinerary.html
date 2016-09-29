@@ -1,6 +1,23 @@
 <h1>Woohoo You Have Things To Do!</h1>
 <div class="row">
-    <!-- <div ng-repeat="object in finalItinerary">
+    <div ng-repeat="object in finalItinerary">
+      <div class ="panel panel-success col-md-3 .containerfluid">
+        <div class="row">
+          <div class="panel-body">
+            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
+            <div><b>{{object.name}}</b></div>
+            <div>{{object.address}}</div>
+            <div>{{object.comments}}</div>
+            <data class="col-md-1"></data>
+            <div class="input-group-btn">
+          </div>
+         </div>
+       </div>
+     </div>
+    </div>
+
+<!-- <h1>Morning Activity</h1> -->
+<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'morning'">
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
           <div class="panel-body">
@@ -16,8 +33,8 @@
      </div>
     </div> -->
 
-<h1>Morning Activity</h1>
-<div ng-repeat="object in finalItinerary" ng-if="object.when === 'morning'">
+<!-- <h1>Afternoon Activity</h1> -->
+<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'afternoon'">
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
           <div class="panel-body">
@@ -31,10 +48,10 @@
          </div>
        </div>
      </div>
-    </div>
+    </div> -->
 
-<h1>Afternoon Activity</h1>
-<div ng-repeat="object in finalItinerary" ng-if="object.when === 'afternoon'">
+<!-- <h1>Evening Activity</h1> -->
+<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'evening'">
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
           <div class="panel-body">
@@ -48,10 +65,10 @@
          </div>
        </div>
      </div>
-    </div>
+    </div> -->
 
-<h1>Evening Activity</h1>
-<div ng-repeat="object in finalItinerary" ng-if="object.when === 'evening'">
+<!-- <h1>Activity for Anytime</h1> -->
+<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'any'">
       <div class ="panel panel-success col-md-3 .containerfluid">
         <div class="row">
           <div class="panel-body">
@@ -65,24 +82,7 @@
          </div>
        </div>
      </div>
-    </div>
-
-<h1>Activity for Anytime</h1>
-<div ng-repeat="object in finalItinerary" ng-if="object.when === 'any'">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
-            <div><b>{{object.name}}</b></div>
-            <div>{{object.address}}</div>
-            <div>{{object.comments}}</div>
-            <data class="col-md-1"></data>
-            <div class="input-group-btn">
-          </div>
-         </div>
-       </div>
-     </div>
-    </div>
+    </div> -->
 
   <div>
     <div class="weatherBlock">
