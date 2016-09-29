@@ -6,9 +6,9 @@ let beerOrCoffeeEvents = [];
 $scope.finalItinerary = [];
 
 
-$scope.beerMe = () => {
+$scope.beerMe = (beerOrCoffee) => {
 
-  EventFactory.getEventsByType("nss")
+  EventFactory.getEventsByType(beerOrCoffee)
     .then ( (events) => {
       console.log("events from call", events);
       for(var object in events){
