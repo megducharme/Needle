@@ -1,8 +1,16 @@
-// "use strict";
-// app.factory("AddressFactory", function ($q, $http) {
-//   return {
-//     currentAddress: ""
-//   };
+"use strict";
+app.factory("AddressFactory", function ($q, $http) {
+
+let currentZip = null;
+
+  return {
+    setCurrentZip: function (userZip) {
+      currentZip = userZip;
+    },
+    getUserZip: function () {
+      return currentZip;
+    }
+  };
 
 // let distanceFromCurrent = function (currentAddress, eventAddress) {
 //   return $q ( (resolve, reject) => {
@@ -17,6 +25,4 @@
 //   });
 // };
 
-// return {distanceFromCurrent};
-
-// });
+});

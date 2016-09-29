@@ -8,7 +8,9 @@ app.config(function($routeProvider){
    let isAuth = (AuthFactory) => new Promise( (resolve, reject) =>
      {
         if(AuthFactory.isAuthenticated()) {
+           .then ( () => {
             resolve();
+           })
         } else {
             reject();
         }

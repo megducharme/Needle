@@ -8,9 +8,9 @@
 <label class="welcomeInput">Name</label><br>
 <input class="welcomeInput" type="text" name="name" ng-model="userObject.name"><br>
 
-<label ng-model="address.currentAddress" class="welcomeInput">Current Location</label><br>
+<label ng-model="address.currentAddress" class="welcomeInput">Current Zipcode</label><br>
 <input class="welcomeInput" type="text" name="location" ng-model="userObject.currentLocation"><br>
-<button class="welcomeInput" ng-click="createUserProfile()">Next</button><br>
+<button class="welcomeInput" ng-click="createUserProfile(); setCurrentZip(address.currentAddress)">Next</button><br>
 <!-- <button ng-click="initMap()">Show Current Location</button><br> -->
 </div>
 
