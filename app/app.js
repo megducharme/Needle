@@ -24,7 +24,7 @@ app.config(function($routeProvider){
             templateUrl:"partials/login.html",
             controller: "LoginCtrl",
         }).
-    when("/welcome", {
+    when("/createAccount", {
             templateUrl:"partials/create-account.html",
             controller: "UserAccountCtrl",
             resolve: {isAuth}
@@ -62,6 +62,11 @@ app.config(function($routeProvider){
      when("/finalItinerary", {
             templateUrl:"partials/final-itinerary",
             controller: "DisplayItineraryCtrl",
+            resolve: {isAuth}
+        }).
+     when("/nssTab", {
+            templateUrl:"partials/nss-tab",
+            controller: "NSSCtrl",
             resolve: {isAuth}
         }).
     otherwise("/");

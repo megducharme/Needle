@@ -7,7 +7,6 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
   };
 
   $scope.register = () => {
-    // console.log("you want to register?");
     AuthFactory.createUser({
       email: $scope.account.email,
       password: $scope.account.password
@@ -16,18 +15,17 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
       console.log("you're a new user", userData.uid );
       // $scope.login();
       if (userData) {
-        $window.location.href = "#/welcome";
+        $window.location.href = "#/createAccount";
       } else {
         $window.location.href = "#/login";
       }
       console.log("data from login - register", userData);
     }, (error) => {
-      console.log("there's an error creating the user");
+      console.log("there's an error creating the user", error);
   });
 };
 
   $scope.login = () => {
-    // console.log("you clicked login");
     AuthFactory.loginUser($scope.account)
       .then( (data) => {
         console.log("a user has logged in ", data.uid);
@@ -46,7 +44,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
         AuthFactory.loginGoogle($scope.account)
         .then((data)=> {
          if (data) {
-          $window.location.href = "#/welcome";
+          $window.location.href = "#/createAccount";
         } else {
           $window.location.href = "#/login";
         }

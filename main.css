@@ -108,3 +108,7 @@ h1, h3, .preferencesForm {
 .navbar-default .navbar-nav li a {
     color: #fff;
 }
+
+.weatherBlock {
+  display:block;
+}
