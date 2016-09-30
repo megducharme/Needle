@@ -97,6 +97,7 @@ console.log("user time", userTime);
 
 
 $scope.getWeather = () => {
+  console.log("inside the get weather function");
   EventFactory.getNashWeather()
   .then ( (nashWeather) => {
     console.log("nashville weather", nashWeather);
@@ -106,8 +107,8 @@ $scope.getWeather = () => {
     console.log("weather feelslike", $scope.feelsLike);
     $scope.precipitation = nashWeather.current_observation.precip_today_string;
     console.log("weather precip", $scope.precipitation);
-  })
-}
+  });
+};
 
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

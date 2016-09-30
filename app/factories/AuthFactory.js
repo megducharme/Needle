@@ -44,7 +44,7 @@ app.factory("AuthFactory", function () {
           resolve(true);
         } else {
           resolve(false);
-        };
+        }
       });
     });
   };

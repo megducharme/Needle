@@ -5,15 +5,15 @@ var app = angular.module("Needle", ["ngRoute"])
 
 app.config(function($routeProvider){
 
-   let isAuth = (AuthFactory) => new Promise( (resolve, reject) =>
-     {
-        if(AuthFactory.isAuthenticated()) {
-           .then ( () => {
-            resolve();
-           })
+   let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
+      AuthFactory.isAuthenticated()
+      .then( (user) => {
+        if(user) {
+          resolve();
         } else {
-            reject();
+          reject();
         }
+      });
     });
 
    $routeProvider.

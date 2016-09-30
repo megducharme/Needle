@@ -1,17 +1,19 @@
 <h1>Choose from our Nashville favorites, or add your own!</h1>
   <div class="row">
-      <!-- <h1>{{preference}}</h1> -->
-      <div ng-repeat="event in eventsToDom">
-        <div class ="panel panel-success col-md-3 .containerfluid">
-          <div class="row">
-            <div class="panel-body">
-              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
-              <div><b>{{event.name}}</b></div>
-              <div>{{event.address}}</div>
-              <data class="col-md-1"></data>
-              <div class="input-group-btn  board-list">
-                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
-                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+      <div ng-repeat="object in objectsForDOM">
+        <h1>{{object.eventType}}</h1>
+        <div ng-repeat="event in object.events">
+          <div class ="panel panel-success col-md-3 .containerfluid">
+            <div class="row">
+              <div class="panel-body">
+                <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
+                <div><b>{{event.name}}</b></div>
+                <div>{{event.address}}</div>
+                <data class="col-md-1"></data>
+                <div class="input-group-btn  board-list">
+                  <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                  <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+                </div>
               </div>
             </div>
           </div>
