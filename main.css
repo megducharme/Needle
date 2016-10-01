@@ -112,3 +112,8 @@ h1, h3, .preferencesForm {
 .weatherBlock {
   display:block;
 }
+
+.selectionTitles{
+  text-align: left;
+  margin-left: 20px;
+}

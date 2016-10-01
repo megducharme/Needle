@@ -6,8 +6,6 @@ console.log("USER SELECTION LOADED");
 
 let userId;
 
-// $scope.objectsForDOM = null;
-
 let preferencesCoffee = [];
 let preferencesBreweries = [];
 let preferencesWaterfallHikes = [];
@@ -24,7 +22,6 @@ $scope.$parent.getUser()
     userId = user;
     showEvents();
     console.log("should have go to showEvents by now");
-  // console.log("need this userId13", userId);
   })
   .catch(() => console.error);
 
@@ -86,15 +83,10 @@ function flattenObjects(data) {
         preferencesShopping.push(object[singleObject]);
       }
       console.log("should be coffee array of objects", preferencesCoffee);
-      // console.log("object[singleObject]", object[singleObject]);
     }
 
     buildObjectsForDom();
   });
-  // console.log("array of objects to write to DOM", $scope.eventsToDom);
-  // $scope.eventsToDom = data.reduce(function(a, b) {
-  //   return a.concat(b);
-  // });
 }
 
 function buildObjectsForDom() {

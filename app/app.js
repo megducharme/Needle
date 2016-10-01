@@ -67,7 +67,7 @@ app.config(function($routeProvider){
             resolve: {isAuth}
         }).
      when("/nssTab", {
-            templateUrl:"partials/nss-tab",
+            templateUrl:"partials/final-itinerary",
             controller: "NSSCtrl",
             resolve: {isAuth}
         }).

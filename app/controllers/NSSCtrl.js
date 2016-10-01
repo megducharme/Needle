@@ -3,11 +3,10 @@
 app.controller("NSSCtrl", function($scope, $location, EventFactory) {
 
 let beerOrCoffeeEvents = [];
-$scope.finalItinerary = [];
 
 
 $scope.beerMe = (beerOrCoffee) => {
-
+$scope.finalItinerary = [];
   EventFactory.getEventsByType(beerOrCoffee)
     .then ( (events) => {
       console.log("events from call", events);
@@ -20,6 +19,7 @@ $scope.beerMe = (beerOrCoffee) => {
       $scope.finalItinerary.push(beerOrCoffeeResult);
       console.log("get beer or coffee here", $scope.finalItinerary);
     });
+    $location.url("/finalItinerary");
 };
 
 function getRandom(min, max) {
