@@ -8,18 +8,19 @@
 
 <!-- REPEAT EVENTS WITHIN EVENT TYPE -->
       <div>
-        <div class="col-md-3" ng-repeat="event in object.events">
+        <div class="col-md-3 selection-card" ng-repeat="event in object.events">
           <div class ="panel panel-success .containerfluid">
             <div class="panel-body">
               <img class="selection-pic" src= "{{event.photo}}">
-              <div>{{event.name}}</div>
-              <div>{{event.address}}</div>
-              <data></data>
+              <div class="event-description">
+                <h5 class="event-description">{{event.name}}<h5>
+              </div>
+              <div class="event-description">{{event.address}}</div>
               <div class="input-group-btn  board-list">
 
 <!-- BUTTONS ON EVENTS - EDIT AND DELETE -->
-                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
-                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+                <button class="btn btn-success event-description" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success event-description" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
               </div>
             </div>
           </div>
