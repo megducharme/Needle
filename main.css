@@ -38,7 +38,14 @@ h1, h3, .preferencesForm {
 .selection-card {
   height:350px;
   max-width:350px;
-  overflow: scroll;
+  margin-top: 10px;
+  border: 1px #444;
+  border-radius: 2px;
+}
+
+.finalItineraryCard {
+  height:250px;
+  max-width:350px;
   margin-top: 10px;
   border: 1px #444;
   border-radius: 2px;
@@ -135,6 +142,18 @@ h1, h3, .preferencesForm {
   margin-left: 20px;
 }
 
-.pseudoFooter {
-  /*display: inline-block;*/
+.footer {
+  color:white;
+  text-decoration: none;
 }
+
+.footer a {
+  color:white;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #0095E3;
+}
+
+

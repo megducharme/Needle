@@ -1,66 +1,58 @@
 <h1><u>Your Events</u></h1>
 
+<div class="container">
 <h1>Places You've Been</h1>
   <div class="row">
-    <div ng-repeat="event in userEvents" ng-if="event.visited == true">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic .img-responsive eventBlock" src= "{{event.photo}}">
-            <div class="eventBlock"><b>{{event.name}}</b></div>
-            <div class="eventBlock">{{event.address}}</div>
-            <div class="eventBlock">{{event.comments}}</div>
-            <data class="col-md-1"></data>
+    <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == true">
+      <div class ="panel panel-success .containerfluid">
+        <div class="panel-body">
+            <div><img class="selection-pic" src= "{{event.photo}}"></div>
+            <div class="event-description">
+              <h5>{{event.name}}</h5>
+            </div>
+            <div>{{event.address}}</div>
+            <div>{{event.comments}}</div>
             <div class="input-group-btn">
               <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
               <button class="btn btn-success" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container">
 <h1>Places You Want To Go</h1>
   <div class="row">
-    <div ng-repeat="event in userEvents" ng-if="event.visited == false">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic .img-responsive" src= "{{event.photo}}">
-            <div class="eventBlock"><b>{{event.name}}</b></div>
-            <div class="eventBlock">{{event.address}}</div>
-            <div class="eventBlock">{{event.comments}}</div>
-            <data class="col-md-1"></data>
+    <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == false">
+      <div class ="panel panel-success .containerfluid">
+        <div class="panel-body">
+            <div><img class="selection-pic" src= "{{event.photo}}"></div>
+            <div class="event-description">
+              <h5>{{event.name}}</h5>
+            </div>
+            <div>{{event.address}}</div>
+            <div>{{event.comments}}</div>
             <div class="input-group-btn">
-              <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)">Remove</button>
+              <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
               <button class="btn btn-success" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div>
-  <img class="pseudoFooter" style="height:75px; width:180px;" src="../app/photos/logo.png">
-  <h6 class="pseudoFooter"><a href="#/selections">Update Nashville Events</a></h6>
-  <h6 class="pseudoFooter"><a href="#/preferences">Update Preferences</a></h6>
-</div>
-
-<!-- <div ng-repeat="event in userEvents" ng-if="event.visited == false">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="thumbnail" style="display:inline-block;">
-        <img src="{{event.photo}}">
-        <div class="caption">
-          <h3>{{event.name}}</h3>
-          <h4>{{event.address}}</h4>
-          <p>{{event.caption}}</p>
-          <p><a href="#" class="btn btn-primary" role="button">Remove</a> <a href="#" class="btn btn-default" role="button">Edit</a></p>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </div>
- -->
+
+
+<footer class="bd-footer text-muted">
+  <div>
+    <!-- <img class="pseudoFooter" style="height:75px; width:180px;" src="../app/photos/logo.png"> -->
+    <h5 style="color:black;">Update</h5>
+    <h6><a href="#/selections">Selected Events</a></h6>
+    <h6><a href="#/preferences">Itinerary Preferences</a></h6>
+  </div>
+</footer>
+
