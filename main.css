@@ -30,9 +30,25 @@ h1, h3, .preferencesForm {
 }
 
 .selection-pic {
-    max-height: 150px;
-    min-height: 150px;
-    max-width: 300px;
+    max-height: 130px;
+    min-height: 130px;
+    max-width: 250px;
+    margin:0 auto;
+}
+
+.selection-card {
+  max-height:350px;
+  max-width:350px;
+  overflow: scroll;
+  margin-top: 10px;
+}
+
+.selection-card h5 {
+  font-weight: bold;
+}
+
+.event-description {
+  text-align: center;
 }
 
 .panel-boady {
@@ -111,4 +127,13 @@ h1, h3, .preferencesForm {
 
 .weatherBlock {
   display:block;
+}
+
+.selectionTitles{
+  text-align: left;
+  margin-left: 20px;
+}
+
+.pseudoFooter {
+  /*display: inline-block;*/
 }

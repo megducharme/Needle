@@ -1,7 +1,7 @@
 <h1>Woohoo You Have Things To Do!</h1>
 <div class="row">
     <div ng-repeat="object in finalItinerary">
-      <div class ="panel panel-success col-md-3 .containerfluid">
+      <div class ="panel panel-success col-md-3 .containerfluid selection-card" style="margin-right:10px;">
         <div class="row">
           <div class="panel-body">
             <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
@@ -14,83 +14,35 @@
          </div>
        </div>
      </div>
-    </div>
-
-<!-- <h1>Morning Activity</h1> -->
-<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'morning'">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
-            <div><b>{{object.name}}</b></div>
-            <div>{{object.address}}</div>
-            <div>{{object.comments}}</div>
-            <data class="col-md-1"></data>
-            <div class="input-group-btn">
-          </div>
-         </div>
-       </div>
-     </div>
-    </div> -->
-
-<!-- <h1>Afternoon Activity</h1> -->
-<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'afternoon'">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
-            <div><b>{{object.name}}</b></div>
-            <div>{{object.address}}</div>
-            <div>{{object.comments}}</div>
-            <data class="col-md-1"></data>
-            <div class="input-group-btn">
-          </div>
-         </div>
-       </div>
-     </div>
-    </div> -->
-
-<!-- <h1>Evening Activity</h1> -->
-<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'evening'">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
-            <div><b>{{object.name}}</b></div>
-            <div>{{object.address}}</div>
-            <div>{{object.comments}}</div>
-            <data class="col-md-1"></data>
-            <div class="input-group-btn">
-          </div>
-         </div>
-       </div>
-     </div>
-    </div> -->
-
-<!-- <h1>Activity for Anytime</h1> -->
-<!-- <div ng-repeat="object in finalItinerary" ng-if="object.when === 'any'">
-      <div class ="panel panel-success col-md-3 .containerfluid">
-        <div class="row">
-          <div class="panel-body">
-            <img class="selection-pic materialboxed .img-responsive" src= "{{object.photo}}">
-            <div><b>{{object.name}}</b></div>
-            <div>{{object.address}}</div>
-            <div>{{object.comments}}</div>
-            <data class="col-md-1"></data>
-            <div class="input-group-btn">
-          </div>
-         </div>
-       </div>
-     </div>
-    </div> -->
-
-  <div>
-    <div class="weatherBlock">
-      <h2>Today's Weather in Nashville, TN</h2>
-      <h4>{{$scope.weatherIcon}}</h4>
-      <h4>{{$scope.feelsLike}}</h4>
-      <h4>{{$scope.precipitation}}</h4>
-    </div>
+    </div><br>
   </div>
 
+<h4>Check the Weather in Nashville before you go!</h4>
+ <span style="display: block !important; width: 320px; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:37201.1.99999&bannertypeclick=wu_clean2day" title="Nashville, Tennessee Weather Forecast" target="_blank"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_clean2day_cond&airportcode=KBNA&ForcedCity=Nashville&ForcedState=TN&zip=37201&language=EN" alt="Find more about Weather in Nashville, TN" width="300" /></a><br><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:37201.1.99999&bannertypeclick=wu_clean2day" style="font-family: sans-serif; font-size: 12px" target="_blank">Click for weather forecast</a></span>
+
+
+
+<!-- TO SEPARATE EVENTS BY TIME OF DAY -->
+<!-- TO SEPARATE EVENTS BY TIME OF DAY -->
+<!-- TO SEPARATE EVENTS BY TIME OF DAY -->
+<!-- TO SEPARATE EVENTS BY TIME OF DAY -->
+
+<!-- <div class="container">
+  <div class="row" ng-repeat="event in finalItinerary" ng-if="event.when === 'Morning'">
+    <h2 class="selectionTitles">{{event.when}}</h2>
+    <div>
+      <div ng-repeat="event in object.object.events">
+        <div class ="panel panel-success .containerfluid">
+          <div class="panel-body">
+            <img class="selection-pic" src= "{{event.photo}}">
+            <div>{{object.event.name}}</div>
+            <div>{{object.event.address}}</div>
+            <data></data>
+            <div class="input-group-btn  board-list">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div> -->

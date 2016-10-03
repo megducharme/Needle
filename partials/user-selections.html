@@ -1,21 +1,32 @@
-<h1>Choose from our Nashville favorites, or add your own!</h1>
-  <div class="row">
-      <!-- <h1>{{preference}}</h1> -->
-      <div ng-repeat="event in eventsToDom">
-        <div class ="panel panel-success col-md-3 .containerfluid">
-          <div class="row">
+<div class="container">
+  <h1>Choose from our Nashville favorites, or add your own!</h1>
+<!--   <div class="row"> -->
+
+<!-- REPEAT EVENT TYPE TITLES -->
+    <div class="row" ng-repeat="object in objectsForDOM">
+      <h1 class="selectionTitles">{{object.eventType}}</h1>
+
+<!-- REPEAT EVENTS WITHIN EVENT TYPE -->
+      <div>
+        <div class="col-md-3 selection-card" ng-repeat="event in object.events">
+          <div class ="panel panel-success .containerfluid">
             <div class="panel-body">
-              <img class="selection-pic materialboxed .img-responsive" src= "{{event.photo}}">
-              <div><b>{{event.name}}</b></div>
-              <div>{{event.address}}</div>
-              <data class="col-md-1"></data>
+              <img class="selection-pic" src= "{{event.photo}}">
+              <div class="event-description">
+                <h5 class="event-description">{{event.name}}<h5>
+              </div>
+              <div class="event-description">{{event.address}}</div>
               <div class="input-group-btn  board-list">
-                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
-                <button class="btn btn-success" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
+
+<!-- BUTTONS ON EVENTS - EDIT AND DELETE -->
+                <button class="btn btn-success event-description" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Love this place!</button><br>
+                <button class="btn btn-success event-description" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Never Been</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      </div>
     </div>
-  </div>
+
+

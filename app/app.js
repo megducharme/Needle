@@ -5,13 +5,15 @@ var app = angular.module("Needle", ["ngRoute"])
 
 app.config(function($routeProvider){
 
-   let isAuth = (AuthFactory) => new Promise( (resolve, reject) =>
-     {
-        if(AuthFactory.isAuthenticated()) {
-            resolve();
+   let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
+      AuthFactory.isAuthenticated()
+      .then( (user) => {
+        if(user) {
+          resolve();
         } else {
-            reject();
+          reject();
         }
+      });
     });
 
    $routeProvider.
@@ -65,7 +67,7 @@ app.config(function($routeProvider){
             resolve: {isAuth}
         }).
      when("/nssTab", {
-            templateUrl:"partials/nss-tab",
+            templateUrl:"partials/final-itinerary",
             controller: "NSSCtrl",
             resolve: {isAuth}
         }).

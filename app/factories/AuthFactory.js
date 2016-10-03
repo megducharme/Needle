@@ -34,8 +34,19 @@ app.factory("AuthFactory", function () {
   };
 
   let isAuthenticated = function() {
-    console.log("isAuthenticated", firebase.auth().currentUser);
-    return (firebase.auth().currentUser) ? true : false;
+    console.log("isAuthenticated called AuthFactory");
+    return new Promise( (resolve, reject) => {
+      console.log("firing onAuthStateChanged");
+      firebase.auth().onAuthStateChanged(function(user) {
+        console.log("onAuthStateChanged finished");
+        if (user) {
+          console.log("user", user);
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      });
+    });
   };
 
   return {createUser, getUser, loginUser, logoutUser, isAuthenticated, loginGoogle};
