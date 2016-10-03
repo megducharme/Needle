@@ -29,11 +29,14 @@ let getUserEvents = (userId) => {
   return $q( (resolve, reject) => {
     $http.get(`${FirebaseURL}events.json?orderBy="uid"&equalTo="${userId}"`)
     .success((userEventObjects) => {
+
       console.log(userEventObjects);
+
       Object.keys(userEventObjects).forEach((key) =>{
         userEventObjects[key].id = key;
         userEvents.push(userEventObjects[key]);
       });
+
       resolve(userEvents);
     })
     .error((error) => {

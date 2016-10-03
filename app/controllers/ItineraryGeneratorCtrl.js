@@ -56,8 +56,8 @@ console.log("user time", userTime);
         if(options === 0) {
           for (var i = 1; i >= 0; i--) {
             var fewHoursRandomHalfDay = getRandom(0, (fewHours.length-1));
-            fewHours.splice(fewHoursRandomHalfDay, 1);
             $scope.finalItinerary.push(fewHours[fewHoursRandomHalfDay]);
+            fewHours.splice(fewHoursRandomHalfDay, 1);
           }
         }else {
           let num = getRandom(0, (halfDay.length-1));
@@ -71,18 +71,24 @@ console.log("user time", userTime);
         if(options === 0) {
           let num = getRandom(0, (halfDay.length-1));
           let halfDayResult = halfDay[num];
+
           $scope.finalItinerary.push(halfDayResult);
+
             for (var m = 1; m >= 0; m--) {
               var fewHoursRandom = getRandom(0, (fewHours.length-1));
               $scope.finalItinerary.push(fewHours[fewHoursRandom]);
             }
+
+          console.log("duplicate?");
+
         }else if(options === 1) {
-              let halfDayToChooseFrom = halfDay;
+
             for (var j = 1; j >= 0; j--) {
               var halfDayRandom = getRandom(0, (halfDay.length-1));
-              halfDay.splice(halfDayRandom, 1);
               $scope.finalItinerary.push(halfDay[halfDayRandom]);
+              halfDay.splice(halfDayRandom, 1);
             }
+
         }else {
           let num = getRandom(0, (fullDay.length-1));
           let fullDayRandom = fullDay[num];
