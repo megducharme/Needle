@@ -1,18 +1,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 <div class="welcome-img">
-  <img src="../app/photos/login.png">
+  <img src="../app/photos/pb1.png">
 </div>
 
 <div class="welcomePage">
-<h3><u>Create a Profile</u></h3>
+<h2>Create Your Profile</h2>
+<p>Enter your name and zip code, so we can get started <br>creating the most personalized itinerary for you. Once done, click "Next"</p>
 
-<label class="welcomeInput">Name</label><br>
-<input class="welcomeInput" type="text" name="name" ng-model="userObject.name"><br>
+<!-- <label class="welcomeInput">Name</label><br> -->
+<input class="welcomeInput" type="text" name="name" ng-model="userObject.name" placeholder="  Name">
 
-<label ng-model="address.currentAddress" class="welcomeInput">Current Zipcode</label><br>
-<input class="welcomeInput" type="text" name="location" ng-model="userObject.currentLocation"><br>
-<button class="welcomeInput" ng-click="createUserProfile(); setCurrentZip(address.currentAddress)">Next</button><br>
+<!-- <label ng-model="address.currentAddress" class="welcomeInput">Current Zip code</label><br> -->
+<input class="welcomeInput" type="text" name="location" ng-model="userObject.currentLocation" placeholder="  Zip Code">
+<button class="needleBtn" ng-click="createUserProfile(); setCurrentZip(address.currentAddress)">Next</button>
 <!-- <button ng-click="initMap()">Show Current Location</button><br> -->
 </div>
 

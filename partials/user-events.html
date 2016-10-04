@@ -1,7 +1,14 @@
-<h1><u>Your Events</u></h1>
+<div class="welcome-img">
+  <img  src="../app/photos/pb4.png">
+</div>
+
+<h1 class="welcomePage">My Profile</h1>
+<p class="welcomePage">Further customize your profile my removing places you do not like, <br>and add notes to places you've never been before.</p>
+
 
 <div class="container">
-<h1>Places You've Been</h1>
+<br><hr><br>
+<h3 class="welcomePage" style="color:#444">Placee I've Been</h3>
   <div class="row">
     <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == true">
       <div class ="panel panel-success .containerfluid">
@@ -14,7 +21,7 @@
             <div>{{event.comments}}</div>
             <div class="input-group-btn">
               <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
-              <button class="btn btn-success" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
+              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
             </div>
             </div>
         </div>
@@ -24,7 +31,7 @@
 </div>
 
 <div class="container">
-<h1>Places You Want To Go</h1>
+<h3 class="welcomePage">Places I Want To Go</h3>
   <div class="row">
     <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == false">
       <div class ="panel panel-success .containerfluid">
@@ -37,7 +44,7 @@
             <div>{{event.comments}}</div>
             <div class="input-group-btn">
               <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
-              <button class="btn btn-success" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
+              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
             </div>
             </div>
         </div>

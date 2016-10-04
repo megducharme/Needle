@@ -65,12 +65,26 @@ h1, h3, .preferencesForm {
 
 .welcomePage {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .welcomeInput {
   text-align: left;
   margin-top: 10px;
+  display: inline-block;
+  width: 160px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.needleBtn {
+  background-color: #0095e3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 1px;
+
 }
 
 .btn-info {
@@ -94,6 +108,9 @@ h1, h3, .preferencesForm {
   display: inline-block;
 }
 
+.preferenceLabel {
+
+}
 
 .preferencesForm {
   text-align: center;
@@ -107,8 +124,10 @@ h1, h3, .preferencesForm {
   margin-top: 10px;
 }
 
-.welcome-img {
-  margin-left: 290px;
+.welcome-img img {
+  height: 220px;
+  display: block;
+  margin: auto;
 }
 
 .eventBlock {
@@ -156,4 +175,6 @@ h1, h3, .preferencesForm {
   background-color: #0095E3;
 }
 
-
+.editBtn a {
+  color:white;
+}
