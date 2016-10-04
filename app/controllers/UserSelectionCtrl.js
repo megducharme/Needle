@@ -96,7 +96,7 @@ function buildObjectsForDom() {
 
 if(preferencesCoffee.length >= 1) {
   let coffeeObject = {
-    eventType:"Coffee",
+    eventType:"Coffee Shops",
     events: preferencesCoffee
   };
   console.log("COFFEE OBJECT IS RIGHT HERE", coffeeObject);

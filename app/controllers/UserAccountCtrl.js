@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("UserAccountCtrl", function ($scope, EventFactory, $location) {
+app.controller("UserAccountCtrl", function ($scope, EventFactory, $location, UserFactory) {
 
 let userId;
 
@@ -24,6 +24,7 @@ $scope.createUserProfile = () => {
         $location.path("/preferences");
   // console.log("this is from the create user", $scope.userObject);
 });
+  UserFactory.setUserObj($scope.userObject)
 };
 
 });

@@ -1,36 +1,40 @@
-<h1>Let's get to know each other!</h1>
-<h3>What would you like potentially included on your itinerary?</h3><br>
+<div class="welcome-img">
+  <img  src="../app/photos/pb2.png">
+</div>
+
+<h2 class="welcomePage"> Hi, {{userName}}! Let's get started.</h2>
+<p class="welcomePage">For needle to be able to create the best itinerary possible, <br>we need to know what activities you enjoy doing!</p><br>
 
 <form name="preferencesForm" class="preferencesForm">
-  <label>Coffee
+  <label class="preferenceLabel">Coffee
     <input type="checkbox" ng-model="checkboxModel.coffee">
   </label><br/>
-  <label>Waterfall Hike
+  <label class="preferenceLabel">Waterfall Hike
     <input type="checkbox" ng-model="checkboxModel.waterfallHikes">
   </label><br/>
-  <label>Breweries
+  <label class="preferenceLabel">Breweries
     <input type="checkbox" ng-model="checkboxModel.breweries">
   </label><br/>
-  <label>Live Music
+  <label class="preferenceLabel">Live Music
     <input type="checkbox" ng-model="checkboxModel.liveMusic">
   </label><br/>
-  <label>Tours
+  <label class="preferenceLabel">Tours
     <input type="checkbox" ng-model="checkboxModel.tours">
   </label><br/>
-  <label>Restaurants
+  <label class="preferenceLabel">Restaurants
     <input type="checkbox" ng-model="checkboxModel.restaurants">
   </label><br/>
-  <label>City Park
+  <label class="preferenceLabel">City Park
     <input type="checkbox" ng-model="checkboxModel.cityPark">
   </label><br/>
-  <label>Get Drinks
+  <label class="preferenceLabel">Get Drinks
     <input type="checkbox" ng-model="checkboxModel.getDrinks">
   </label><br/>
-  <label>Shopping
+  <label class="preferenceLabel">Shopping
     <input type="checkbox" ng-model="checkboxModel.shopping">
   </label><br/><br>
   <!-- <div class="preferencesBox"><input type="submit" value="Next"><a ng-href="#/selections"></a></div> -->
-  <button ng-click="showPreferredEvents()">Next</button>
+  <button class="needleBtn" ng-click="showPreferredEvents()">Next</button>
 
  </form>
 
