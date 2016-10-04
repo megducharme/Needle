@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("UserPreferencesCtrl", function ($scope, EventFactory, $location) {
+app.controller("UserPreferencesCtrl", function ($scope, EventFactory, $location, UserFactory) {
 
 console.log("UserPreferencesCtrl is working");
 
@@ -8,6 +8,7 @@ let userId;
 let values = [];
 let userObjectToEdit;
 let fbUserId;
+$scope.userName;
 
 $scope.$parent.getUser()
   .then ( (user) => {
@@ -29,6 +30,13 @@ $scope.$parent.getUser()
     getDrinks:false,
     shopping:false
   };
+
+getUserName();
+
+function getUserName() {
+    $scope.userName = UserFactory.getUserObj()
+}
+
 
 $scope.showPreferredEvents = () => {
   for(var value in $scope.checkboxModel) {

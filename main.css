@@ -45,7 +45,7 @@ h1, h3, .preferencesForm {
 
 .finalItineraryCard {
   height:250px;
-  max-width:350px;
+  max-width:375px;
   margin-top: 10px;
   border: 1px #444;
   border-radius: 2px;
@@ -68,6 +68,10 @@ h1, h3, .preferencesForm {
   margin-top: 0px;
 }
 
+.needleBtnCenter {
+  margin:0 auto;
+}
+
 .welcomeInput {
   text-align: left;
   margin-top: 10px;
@@ -84,7 +88,14 @@ h1, h3, .preferencesForm {
   color: white;
   padding: 10px 20px;
   border-radius: 1px;
+}
 
+.needleBtnGray {
+  background-color: #C4C4C4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 1px;
 }
 
 .btn-info {

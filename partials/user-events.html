@@ -5,10 +5,14 @@
 <h1 class="welcomePage">My Profile</h1>
 <p class="welcomePage">Further customize your profile my removing places you do not like, <br>and add notes to places you've never been before.</p>
 
+<div class="needleBtnCenter">
+<button class="needleBtnGray">Update Preferences</button>
+<button class="needleBtnGray">Update Selections</button>
+</div>
 
 <div class="container">
 <br><hr><br>
-<h3 class="welcomePage" style="color:#444">Placee I've Been</h3>
+<h3 class="welcomePage" style="color:#444">Places I've Been</h3>
   <div class="row">
     <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == true">
       <div class ="panel panel-success .containerfluid">
