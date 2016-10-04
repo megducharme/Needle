@@ -1,8 +1,15 @@
 "use strict";
 
-app.controller("UserEventsCtrl", function ($scope, EventFactory, $location) {
+app.controller("UserEventsCtrl", function ($scope, EventFactory, $location, UserFactory) {
 
 let userId;
+$scope.userName;
+
+getUserName();
+
+function getUserName() {
+    $scope.userName = UserFactory.getUserObj()
+}
 
 $scope.$parent.getUser()
   .then ( (user) => {
