@@ -36,7 +36,7 @@ h1, h3, .preferencesForm {
 }
 
 .selection-card {
-  height:350px;
+  height:320px;
   max-width:350px;
   margin-top: 10px;
   border: 1px #444;
@@ -91,11 +91,17 @@ h1, h3, .preferencesForm {
 }
 
 .needleBtnGray {
-  background-color: #C4C4C4;
-  border: none;
-  color: white;
-  padding: 10px 20px;
+  background-color: #FFF;
+  border: 2px black;
+  color: darkgray;
+  padding: 10px 10px 10px 0px;
   border-radius: 1px;
+  text-decoration: none;
+}
+
+.preferencesBtn{
+  text-align: center;
+  margin-top: 35px;
 }
 
 .btn-info {
@@ -188,4 +194,10 @@ h1, h3, .preferencesForm {
 
 .editBtn a {
   color:white;
+}
+
+.loginInput{
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

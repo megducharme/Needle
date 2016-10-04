@@ -3,11 +3,11 @@
 </div>
 
 <h1 class="welcomePage">My Profile</h1>
-<p class="welcomePage">Further customize your profile my removing places you do not like, <br>and add notes to places you've never been before.</p>
+<p class="welcomePage">Further customize your profile by removing places you don't like <br>and add notes to places you've never been before.</p>
 
-<div class="needleBtnCenter">
-<button class="needleBtnGray">Update Preferences</button>
-<button class="needleBtnGray">Update Selections</button>
+<div class="preferencesBtn">
+<button class="needleBtnGray"><a href="#/preferences">Update Preferences</a></button>
+<button class="needleBtnGray"><a href="#/selections">Update Selections</a></button>
 </div>
 
 <div class="container">
@@ -17,15 +17,15 @@
     <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == true">
       <div class ="panel panel-success .containerfluid">
         <div class="panel-body">
-            <div><img class="selection-pic" src= "{{event.photo}}"></div>
+            <div style="text-align:center;"><img class="selection-pic" src= "{{event.photo}}"></div>
             <div class="event-description">
               <h5>{{event.name}}</h5>
             </div>
             <div class="event-description">{{event.address}}</div>
             <div>{{event.comments}}</div>
-            <div class="input-group-btn">
-              <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
-              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
+            <div style="text-align:center;" class="input-group-btn">
+              <button class="btn btn-success" style="margin-top: 5px; margin-right:5px;" ng-click="removeEvent(event.id)"">Remove</button>
+              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Add Note</a></button>
             </div>
             </div>
         </div>
@@ -40,15 +40,15 @@
     <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == false">
       <div class ="panel panel-success .containerfluid">
         <div class="panel-body">
-            <div><img class="selection-pic" src= "{{event.photo}}"></div>
+            <div style="text-align:center;"><img class="selection-pic" src= "{{event.photo}}"></div>
             <div class="event-description">
               <h5>{{event.name}}</h5>
             </div>
             <div class="event-description">{{event.address}}</div>
             <div>{{event.comments}}</div>
-            <div class="input-group-btn">
-              <button class="btn btn-success" style="margin-top: 5px;" ng-click="removeEvent(event.id)"">Remove</button>
-              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Edit</a></button>
+            <div style="text-align:center;" class="input-group-btn">
+              <button class="btn btn-success" style="margin-top: 5px; margin-right:5px;" ng-click="removeEvent(event.id)"">Remove</button>
+              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Add Note</a></button>
             </div>
             </div>
         </div>
@@ -58,12 +58,4 @@
 </div>
 
 
-<footer class="bd-footer text-muted">
-  <div>
-    <!-- <img class="pseudoFooter" style="height:75px; width:180px;" src="../app/photos/logo.png"> -->
-    <h5 style="color:black;">Update</h5>
-    <h6><a href="#/selections">Selected Events</a></h6>
-    <h6><a href="#/preferences">Itinerary Preferences</a></h6>
-  </div>
-</footer>
 

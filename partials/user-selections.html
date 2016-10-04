@@ -16,15 +16,15 @@
         <div class="col-md-3 selection-card" ng-repeat="event in object.events">
           <div class ="panel panel-success .containerfluid">
             <div class="panel-body">
-              <div class="centerImg"><img class="selection-pic" src= "{{event.photo}}"></div>
+              <div class="centerImg" style="text-align:center;"><img class="selection-pic" src= "{{event.photo}}"></div>
               <div class="event-description">
                 <h5 class="event-description">{{event.name}}</h5>
               </div>
               <div class="event-description">{{event.address}}</div>
-              <div class="input-group-btn  board-list">
+              <div style="text-align:center;" class="input-group-btn  board-list">
 
 <!-- BUTTONS ON EVENTS - EDIT AND DELETE -->
-                <button class="btn btn-success event-description" style="margin-top: 5px;" ng-click="saveEventToProfileVisited(event)">Been Here</button><br>
+                <button class="btn btn-success event-description" style="margin-top: 5px; margin-right:5px;" ng-click="saveEventToProfileVisited(event)">Been Here</button>
                 <button class="btn btn-success event-description" style="margin-top: 5px;" ng-click="saveEventToProfileNotVisited(event)">Wanna Go</button>
               </div>
             </div>
@@ -35,6 +35,8 @@
 
 <hr><br>
 
-<!-- <button class="needleBtn" style="margin-bottom:25px; margin-left:auto;">Customize Events</button> -->
+<div style="text-align:center;">
+<button class="needleBtn" style="margin-bottom:25px; margin-left:auto;"><a style="color:white" href="#/myEvents">Customize Events</a></button>
+</div>
 
 </div>
