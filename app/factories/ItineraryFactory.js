@@ -13,11 +13,3 @@ app.factory("ItineraryFactory", function () {
       }
   };
 });
-
-
-//have itinerary stored in factory
-//to pass from itinerary generator to factory - call itinerary
-
-
-//set itinerary and pass itinerary to itinerary factory
-//get itinerary in factory that is then calledby ctrl for final itinerary partial

@@ -28,27 +28,6 @@ function showUserEvents (userId){
   });
 }
 
-// function showUserEvents (userId){
-//   let eventAddresses = [];
-//   EventFactory.getUserEvents(userId)
-//   .then ( (response) => {
-//     response.forEach((response) => {
-//       console.log("response", response)
-//       let eventAddress = response.address;
-//       let currerntAddress = AddressFactory.currerntAddress;
-//       console.log("should be an address", object.address);
-//   })
-//     AddressFactory.distanceFromCurrent(eventAddress, currerntAddress);
-//       .then ( (repsonse) => {
-//         response.forEach(function(distance) {
-//           let event.distance = distance;
-//       })
-//           $scope.userEvents.distance;
-//         })
-//     }
-//   });
-// }
-
 $scope.removeEvent = (eventId) => {
   console.log("event id from FB", eventId);
   EventFactory.deleteUserEvent(eventId)
