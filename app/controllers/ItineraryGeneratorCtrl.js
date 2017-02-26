@@ -104,13 +104,9 @@ $scope.getWeather = () => {
   console.log("inside the get weather function");
   EventFactory.getNashWeather()
   .then ( (nashWeather) => {
-    console.log("nashville weather", nashWeather);
     $scope.weatherIcon = nashWeather.current_observation.icon_url;
-    console.log("weather icon", $scope.weatherIcon);
     $scope.feelsLike = nashWeather.current_observation.feelslike_string;
-    console.log("weather feelslike", $scope.feelsLike);
     $scope.precipitation = nashWeather.current_observation.precip_today_string;
-    console.log("weather precip", $scope.precipitation);
   });
 };
 

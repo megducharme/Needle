@@ -2,10 +2,10 @@
 
 app.controller("DisplayItineraryCtrl", function ($scope, ItineraryFactory, $location) {
 
-getInventoryForDom();
+  function getInventoryForDom() {
+    $scope.finalItinerary = ItineraryFactory.getFinalItinerary();
+  }
 
-function getInventoryForDom() {
-  $scope.finalItinerary = ItineraryFactory.getFinalItinerary();
-}
+  getInventoryForDom();
 
 });
