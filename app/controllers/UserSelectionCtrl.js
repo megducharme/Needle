@@ -94,79 +94,79 @@ function buildObjectsForDom() {
   $scope.objectsForDOM = [];
   console.log("coffee array inside building an object", preferencesCoffee);
 
-if(preferencesCoffee.length >= 1) {
-  let coffeeObject = {
-    eventType:"Coffee Shops",
-    events: preferencesCoffee
-  };
-  console.log("COFFEE OBJECT IS RIGHT HERE", coffeeObject);
-  $scope.objectsForDOM.push(coffeeObject);
-  console.log("scope objs for the dom THIS ONE", $scope.objectsForDOM);
-}
-if(preferencesBreweries.length >= 1) {
-  let breweriesObject = {
-    eventType:"Breweries",
-    events: preferencesBreweries
-  };
-  $scope.objectsForDOM.push(breweriesObject);
-  console.log("breweries obj", breweriesObject);
-}
-if(preferencesWaterfallHikes.length >= 1) {
-  let waterfallHikesObject = {
-    eventType:"Waterfall Hikes",
-    events: preferencesWaterfallHikes
-  };
-  console.log("waterfall obj", waterfallHikesObject);
-  $scope.objectsForDOM.push(waterfallHikesObject);
-}
-if(preferencesLiveMusic.length >= 1) {
-  let liveMusicObject = {
-    eventType:"Live Music",
-    events: preferencesLiveMusic
-  };
-  console.log("live music obj", liveMusicObject);
-  $scope.objectsForDOM.push(liveMusicObject);
-}
-if(preferencesTours.length >= 1) {
-  let toursObject = {
-    eventType:"Tours",
-    events: preferencesTours
-  };
-  console.log("tours obj", toursObject);
-  $scope.objectsForDOM.push(toursObject);
-}
-if(preferencesRestaurants.length >= 1) {
-  let restaurantObject = {
-    eventType:"Restaurants",
-    events: preferencesRestaurants
-  };
-  console.log("restaurants obj", restaurantObject);
-  $scope.objectsForDOM.push(restaurantObject);
-}
-if(preferencesCityPark.length >= 1) {
-  let cityParkObject = {
-    eventType:"City Parks",
-    events: preferencesCityPark
-  };
-  console.log("city parks obj", cityParkObject);
-  $scope.objectsForDOM.push(cityParkObject);
-}
-if(preferencesGetDrinks.length >= 1) {
-  let getDrinksObject = {
-    eventType:"Get Drinks",
-    events: preferencesGetDrinks
-  };
-  console.log("drinks obj", getDrinksObject);
-  $scope.objectsForDOM.push(getDrinksObject);
-}
-if(preferencesShopping.length >= 1) {
-  let shoppingObject = {
-    eventType:"Shopping",
-    events: preferencesShopping
-  };
-  console.log("shopping obj", shoppingObject);
-  $scope.objectsForDOM.push(shoppingObject);
-}
+  if(preferencesCoffee.length >= 1) {
+    let coffeeObject = {
+      eventType:"Coffee Shops",
+      events: preferencesCoffee
+    };
+    console.log("COFFEE OBJECT IS RIGHT HERE", coffeeObject);
+    $scope.objectsForDOM.push(coffeeObject);
+    console.log("scope objs for the dom THIS ONE", $scope.objectsForDOM);
+  }
+  if(preferencesBreweries.length >= 1) {
+    let breweriesObject = {
+      eventType:"Breweries",
+      events: preferencesBreweries
+    };
+    $scope.objectsForDOM.push(breweriesObject);
+    console.log("breweries obj", breweriesObject);
+  }
+  if(preferencesWaterfallHikes.length >= 1) {
+    let waterfallHikesObject = {
+      eventType:"Waterfall Hikes",
+      events: preferencesWaterfallHikes
+    };
+    console.log("waterfall obj", waterfallHikesObject);
+    $scope.objectsForDOM.push(waterfallHikesObject);
+  }
+  if(preferencesLiveMusic.length >= 1) {
+    let liveMusicObject = {
+      eventType:"Live Music",
+      events: preferencesLiveMusic
+    };
+    console.log("live music obj", liveMusicObject);
+    $scope.objectsForDOM.push(liveMusicObject);
+  }
+  if(preferencesTours.length >= 1) {
+    let toursObject = {
+      eventType:"Tours",
+      events: preferencesTours
+    };
+    console.log("tours obj", toursObject);
+    $scope.objectsForDOM.push(toursObject);
+  }
+  if(preferencesRestaurants.length >= 1) {
+    let restaurantObject = {
+      eventType:"Restaurants",
+      events: preferencesRestaurants
+    };
+    console.log("restaurants obj", restaurantObject);
+    $scope.objectsForDOM.push(restaurantObject);
+  }
+  if(preferencesCityPark.length >= 1) {
+    let cityParkObject = {
+      eventType:"City Parks",
+      events: preferencesCityPark
+    };
+    console.log("city parks obj", cityParkObject);
+    $scope.objectsForDOM.push(cityParkObject);
+  }
+  if(preferencesGetDrinks.length >= 1) {
+    let getDrinksObject = {
+      eventType:"Get Drinks",
+      events: preferencesGetDrinks
+    };
+    console.log("drinks obj", getDrinksObject);
+    $scope.objectsForDOM.push(getDrinksObject);
+  }
+  if(preferencesShopping.length >= 1) {
+    let shoppingObject = {
+      eventType:"Shopping",
+      events: preferencesShopping
+    };
+    console.log("shopping obj", shoppingObject);
+    $scope.objectsForDOM.push(shoppingObject);
+  }
 console.log("objects for DOM", $scope.objectsForDOM);
 }
 
