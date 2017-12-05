@@ -16,9 +16,9 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory ) {
       console.log("you're a new user", userData.uid );
       // $scope.login();
       if (userData) {
-        $window.location.href = "#!/createAccount";
+        $window.location.href = "#/createAccount";
       } else {
-        $window.location.href = "#!/login";
+        $window.location.href = "#/login";
       }
       console.log("data from login - register", userData);
     }, (error) => {

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("TopCtrl", function($scope, $q, $location, $window, AuthFactory, $timeout) {
+app.controller("TopCtrl", function($scope, $q, $location, $window, AuthFactory) {
   $scope.isLoggedIn = false;
   let currentUser = null;
 
@@ -14,8 +14,7 @@ app.controller("TopCtrl", function($scope, $q, $location, $window, AuthFactory, 
       $scope.isLoggedIn = false;
       $window.location.href = "#/login";
     }
-      // $scope.apply();
-      $timeout();
+      $scope.apply();
 
   });
 
@@ -37,3 +36,4 @@ app.controller("TopCtrl", function($scope, $q, $location, $window, AuthFactory, 
     });
   };
 });
+

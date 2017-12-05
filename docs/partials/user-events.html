@@ -1,0 +1,62 @@
+<div class="welcome-img">
+  <img  src="../app/photos/pb4.png">
+</div>
+
+<h1 class="welcomePage">{{userName}}'s Profile</h1>
+<p class="welcomePage">Further customize your profile by removing places you don't <br> like and add notes to places you've never been before. If there's a place<br> you'd like to add, click "Create Event" in the navigation.</p>
+
+<div class="preferencesBtn">
+<button class="needleBtnGray"><a href="#/preferences">Update Preferences</a></button>
+<button class="needleBtnGray"><a href="#/selections">Update Selections</a></button>
+</div>
+
+<div class="container">
+<br><hr><br>
+<h3 class="welcomePage" style="color:#444">Places I've Been</h3>
+  <div class="row">
+    <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == true">
+      <div class ="panel panel-success .containerfluid">
+        <div class="panel-body">
+            <div style="text-align:center;"><img class="selection-pic" src= "{{event.photo}}"></div>
+            <div class="event-description">
+              <h5>{{event.name}}</h5>
+            </div>
+            <div class="event-description">{{event.address}}</div>
+            <div>{{event.comments}}</div>
+            <div style="text-align:center;" class="input-group-btn">
+              <button class="btn btn-success" style="margin-top: 5px; margin-right:5px;" ng-click="removeEvent(event.id)"">Remove</button>
+              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Add Note</a></button>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<h3 class="welcomePage">Places I Want To Go</h3>
+  <div class="row">
+    <div class ="col-md-3 selection-card" ng-repeat="event in userEvents" ng-if="event.visited == false">
+      <div class ="panel panel-success .containerfluid">
+        <div class="panel-body">
+            <div style="text-align:center;"><img class="selection-pic" src= "{{event.photo}}"></div>
+            <div class="event-description">
+              <h5>{{event.name}}</h5>
+            </div>
+            <div class="event-description">{{event.address}}</div>
+            <div>{{event.comments}}</div>
+            <div style="text-align:center;" class="input-group-btn">
+              <button class="btn btn-success" style="margin-top: 5px; margin-right:5px;" ng-click="removeEvent(event.id)"">Remove</button>
+              <button class="btn btn-success editBtn" style="margin-top: 5px;"><a href = "#/{{event.id}}/edit">Add Note</a></button>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center; margin-bottom:20px;">
+ <button class="needleBtn" ><a style="text-decoration:none; color:white;" href="#/generateItinerary">Generate Itinerary</a></button>
+ </div>

@@ -1,0 +1,200 @@
+/*body {
+    background-image: url("app/photos/restaurant-766050_1280.jpg");
+    background-repeat: no-repeat;
+}*/
+
+/*.logo_img {
+  width: 170px;
+  height: 90px;
+}*/
+
+
+.eventDiv{
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+
+
+h1, h3, .preferencesForm {
+  text-align: center;
+  font-family: avenir;
+}
+
+.itinerary {
+  text-align: center;
+}
+
+.itinerarybtn {
+  display: block;
+}
+
+.selection-pic {
+    max-height: 130px;
+    min-height: 130px;
+    max-width: 250px;
+}
+
+.selection-card {
+  height:320px;
+  max-width:350px;
+  margin-top: 10px;
+  border: 1px #444;
+  border-radius: 2px;
+}
+
+.finalItineraryCard {
+  height:250px;
+  max-width:375px;
+  margin-top: 10px;
+  border: 1px #444;
+  border-radius: 2px;
+}
+
+.selection-card h5 {
+  font-weight: bold;
+}
+
+.event-description {
+  text-align: center;
+}
+
+.panel-boady {
+  margin-left: 20px;
+}
+
+.welcomePage {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.needleBtnCenter {
+  margin:0 auto;
+}
+
+.welcomeInput {
+  text-align: left;
+  margin-top: 10px;
+  display: inline-block;
+  width: 160px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.needleBtn {
+  background-color: #0095e3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 1px;
+}
+
+.needleBtnGray {
+  background-color: #FFF;
+  border: 2px black;
+  color: darkgray;
+  padding: 10px 10px 10px 0px;
+  border-radius: 1px;
+  text-decoration: none;
+}
+
+.preferencesBtn{
+  text-align: center;
+  margin-top: 35px;
+}
+
+.btn-info {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.nvabar-brand img {
+  height: 25px;
+  width: 8px;
+}
+
+.newEventForm {
+  text-align: center;
+  display: block;
+}
+
+.newEventInput {
+  text-align: center;
+  display: inline-block;
+}
+
+
+.preferencesForm {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.preferencesInput {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+.welcome-img img {
+  height: 220px;
+  display: block;
+  margin: auto;
+}
+
+.eventBlock {
+  text-align: center;
+}
+
+.eventBlock img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+.navbar {
+  background-color: #0095E3;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav li a {
+    color: #fff;
+}
+
+.weatherBlock {
+  display:block;
+}
+
+.selectionTitles{
+  text-align: left;
+  margin-left: 20px;
+}
+
+.footer {
+  color:white;
+  text-decoration: none;
+}
+
+.footer a {
+  color:white;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #0095E3;
+}
+
+.editBtn a {
+  color:white;
+}
+
+.loginInput{
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Needle</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body class="wecomePage" ng-app="Needle">
+  <div ng-controller="TopCtrl">
+    <div ng-include="'partials/navbar.html'"></div>
+
+    <div ng-view></div>
+  </div>
+
+
+<!-- 3rd party libs -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<!-- app specific -->
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/values/fb-creds.js"></script>
+<!-- controllers -->
+<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/TopCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/EditEventCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/UserPreferencesCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/UserSelectionCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/EditEventCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/AddNewEventCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ItineraryGeneratorCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/UserAccountCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/UserEventsCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/DisplayItineraryCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/NSSCtrl.js"></script>
+<!-- factories -->
+<script type="text/javascript" src="app/factories/EventFactory.js"></script>
+<script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+<script type="text/javascript" src="app/factories/ItineraryFactory.js"></script>
+<script type="text/javascript" src="app/factories/UserFactory.js"></script>
+</body>
+</html>
