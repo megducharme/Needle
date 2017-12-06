@@ -47,7 +47,6 @@ function flattenObjects(data) {
     let preferencesKey = obj[Object.keys(obj)[0]].type
     preferences[preferencesKey] = []
     for(let key in obj){
-      let preferenceKey = obj[key].type
       preferences[preferencesKey].push(obj[key])
     }
   })
