@@ -43,14 +43,12 @@ function getAllPreferredEvents() {
 
 function flattenObjects(data) {
   let preferences = {}
-  console.log(data)
   data.forEach(obj => {
     let preferencesKey = obj[Object.keys(obj)[0]].type
     preferences[preferencesKey] = []
     for(let key in obj){
       let preferenceKey = obj[key].type
       preferences[preferencesKey].push(obj[key])
-      console.log(preferences)
     }
   })
     buildObjectsForDom(preferences);
